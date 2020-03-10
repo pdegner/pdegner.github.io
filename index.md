@@ -13,7 +13,7 @@
 
 ### Projects Using R
 
-[Crime Rate Analysis](/R/Crime_rate_group_lab/Crime_Rate_group_lab.md)
+[Crime Rate Analysis](/R/Crime_Rate_group_lab/Crime_Rate_group_lab.md)
 
 <img src="images/crime.png?raw=true"/>
 
