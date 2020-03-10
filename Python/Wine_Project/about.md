@@ -1,6 +1,6 @@
 # Wine Value
 The goal of this project is to see what factors affect the price of wine. 
-All of the files can be viewed here: https://github.com/pdegner/pdegner.github.io/tree/master/Python/Wine_Project 
+All of the files can be viewed here: https://github.com/pdegner/Portfolio/tree/master/Python/Wine_Project 
 
 My team took data from a Kaggle dataset: https://www.kaggle.com/zynicide/wine-reviews
  * Unfortunately, this dataset is too big to upload to GitHub. If you download the file from the site above, we used the file called winemag-data-130k-v2.csv.
