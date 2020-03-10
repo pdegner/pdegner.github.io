@@ -11,7 +11,7 @@
 
 ### Projects Using R
 
-[Crime Rate Analysis](/R/Crime_rate_analysis)
+[Crime Rate Analysis](/R/Crime_rate_group_lab/Crime_Rate_group_lab.md)
 <img src="images/crime.png?raw=true"/>
 
 ---
@@ -25,13 +25,13 @@
 ---
 
 ### Other Python Projects
-- [Wine Analysis](https://github.com/pdegner/pdegner.github.io/tree/master/Python/Wine_Project)
+- [Wine Analysis](https://github.com/pdegner/pdegner.github.io/tree/master/Python/Wine_Project/about.md)
 <img src="images/wine.jpg?raw=true"/>
 
 ---
 
-- [Cheating at Scrabble](/Python/Cheating_at_Scrabble)
-<img src="images/scrabble.jpg?raw=true"/>
+- [Cheating at Scrabble](https://github.com/pdegner/pdegner.github.io/blob/master/Python/Cheating_at_Scrabble/about.md)
+<img src="images/Scrabble.jpg?raw=true"/>
 
 ---
 - [ClinVar Data Cleaning](/Python/ClinVar_Data_Cleaning)
