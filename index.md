@@ -4,7 +4,7 @@
 
 ### Machine Learning Projects
 
-[MNIST Handwritten Image Classification](/Machine Learning/MNIST_ML.ipynb)
+[MNIST Handwritten Image Classification](https://github.com/pdegner/pdegner.github.io/blob/master/Machine%20Learning/MNIST_ML.ipynb)
 <img src="images/MNIST.png?raw=true"/>
 
 ---
@@ -25,7 +25,7 @@
 ---
 
 ### Other Python Projects
-- [Wine Analysis](/Python/Wine_Project)
+- [Wine Analysis](https://github.com/pdegner/pdegner.github.io/tree/master/Python/Wine_Project)
 <img src="images/wine.jpg?raw=true"/>
 
 ---
