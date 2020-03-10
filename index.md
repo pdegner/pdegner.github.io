@@ -5,6 +5,7 @@
 ### Machine Learning Projects
 
 [MNIST Handwritten Image Classification](/Machine_Learning/MNIST/MNIST_ML.md)
+
 <img src="images/MNIST.png?raw=true"/>
 
 ---
