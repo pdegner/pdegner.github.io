@@ -19,7 +19,7 @@
 <img src="images/umpire.png?raw=true"/>
 
 ---
-[Project 3 Title](/R/Lasso_Example/Model_Selection_boot_lasso.ipynb)
+[Lasso, bootstrap, and AUC exploration](/R/Lasso_Example/Model_Selection_boot_lasso.ipynb)
 <img src="images/lasso.png?raw=true"/>
 
 ---
