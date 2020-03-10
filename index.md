@@ -31,10 +31,10 @@
 ---
 
 - [Cheating at Scrabble](https://github.com/pdegner/pdegner.github.io/blob/master/Python/Cheating_at_Scrabble/about.md)
-<img src="images/Scrabble.jpg?raw=true"/>
+<img src="images/Scrabble.png?raw=true"/>
 
 ---
-- [ClinVar Data Cleaning](/Python/ClinVar_Data_Cleaning)
+- [ClinVar Data Cleaning](/Python/ClinVar_Data_Cleaning/ClinVar_Data_Cleaning.md)
 <img src="images/clinvar.png?raw=true"/>
 
 ---
