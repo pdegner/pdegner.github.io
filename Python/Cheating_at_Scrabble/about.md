@@ -1,6 +1,6 @@
 # Cheating at Scrabble
 
-The code for this can be found here: https://github.com/pdegner/pdegner.github.io/tree/master/Python/Cheating_at_Scrabble
+The code for this can be found here: https://github.com/pdegner/Portfolio/tree/master/Python/Cheating_at_Scrabble
 
 "scrabble.py" is a Python program that takes a Scrabble rack as a command-line argument and prints all "valid Scrabble English" words that can be constructed from that rack, along with their Scrabble scores sorted by score, and the total number of words you can make. 
 
