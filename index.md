@@ -19,13 +19,13 @@
 
 
 ---
-[Umpire Lifespan Analysis](/R/Umpire_Lifespan.ipynb)
+[Umpire Lifespan Analysis](/R/Umpire_Lifespan/Umpire_Lifespan.md)
 
 <img src="images/umpire.png?raw=true"/>
 
 
 ---
-[Lasso, bootstrap, and AUC exploration](/R/Lasso_Example/Model_Selection_boot_lasso.ipynb)
+[Lasso and bootstrap exploration](/R/Lasso_Example/Model_Selection_boot_lasso.md)
 
 <img src="images/lasso.png?raw=true"/>
 
@@ -33,14 +33,14 @@
 ---
 
 ### Other Python Projects
-- [Wine Analysis](https://github.com/pdegner/pdegner.github.io/tree/master/Python/Wine_Project/about.md)
+- [Wine Analysis (external)](https://github.com/pdegner/pdegner.github.io/tree/master/Python/Wine_Project/about.md)
 
 <img src="images/wine.jpg?raw=true"/>
 
 
 ---
 
-- [Cheating at Scrabble](https://github.com/pdegner/pdegner.github.io/blob/master/Python/Cheating_at_Scrabble/about.md)
+- [Cheating at Scrabble (external)](https://github.com/pdegner/pdegner.github.io/blob/master/Python/Cheating_at_Scrabble/about.md)
 
 <img src="images/Scrabble.png?raw=true"/>
 
