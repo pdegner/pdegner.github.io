@@ -171,10 +171,11 @@ t1-t0
 
 The routes proved to be much more challenging. On Mountain Project, routes are sorted by “area > subarea > route”. But sometimes, there are multiple subareas, so it looks like “area > big-subarea > middle-subarea > small-subarea > route”. My main problem was iterating over all of the routes to ensure I gathered data about all of them, even though they are not uniformly organized.
 
-![image.png](attachment:image.png)
+Thankfully, Mountain Project had another way around this. Within Mountain Project you can search for routes and sort them by difficulty, then by name. It will then output a lovely csv file that includes the URL for each route in your search results. Unfortunately, the search maxes out at 1000 routes, so you can’t get them all in one go. Not to be deterred by such a small inconvenience, I painstakingly went through each area and subarea, grabbed 1000 routes at a time, and saved the files to my computer until I had all 116,000 routes saved in separate csv files on my computer. 
 
+![search](https://github.com/pdegner/pdegner.github.io/blob/master/images/mp/mp_search.png)
 
-Thankfully, Mountain Project had another way around this. Within Mountain Project you can search for routes and sort them by difficulty, then by name. It will then output a lovely csv file that includes the URL for each route in your search results. Unfortunately, the search maxes out at 1000 routes, so you can’t get them all in one go. Not to be deterred by such a small inconvenience, I painstakingly went through each area and subarea, grabbed 1000 routes at a time, and saved the files to my computer until I had all 116,000 routes saved in separate csv files on my computer. Once I had all the csv files, I combined them with this code:
+Once I had all the csv files, I combined them with this code:
 
 ```python
 import os
@@ -480,9 +481,6 @@ The DistilBERT model with both route and gear data provided the best test accura
 
 The route and gear model provided a test accuracy of 81.6%. This begs the question: what is happening in the other 18.4%? Could it be the length of the post that is causing inaccuracy?
 
-![image.png](attachment:image.png)
-
-
 An initial look at string lengths does not show that the lengths of the mismatched strings are terribly different from the lengths of the whole dataset, so this is unlikely to be the culprit.
 
 Next, I looked at the counts of words that were mislabeled compared to the counts of words correctly labeled, both with and without stop words. In each, the counts looked similar except for two words: “cam” and “hex”. Posts with these words tended to be mislabeled. These each refer to a type of climbing gear, and I think they are mislabeled for different reasons.
@@ -491,7 +489,7 @@ Hexes are “old-school” gear that work, but are outdated. Therefore, people d
 
 When there is a big sale on gear, people often post about it in the forums. As I was labeling data, if the post was simply “25% off on cams at website.com”, I labeled it as neutral. Cams are expensive, they go on sale frequently, and climbers need a lot of them, so sales on cams are posted frequently; all of these postings were labeled as neutral. There is also a lot of debate about the best kind of cams, which can lead to sentences with multiple sentiments, causing the label to come out as neutral. Additionally, people talk about cams in a neutral way when the recommended gear for a specific climb. I think that these things led my model to believe that cams are almost always neutral.
 
-![image.png](attachment:image.png)
+![cam_hex](https://github.com/pdegner/pdegner.github.io/blob/master/images/mp/hex_vs_cam.png)
 
 Sentiment about hexes is quite controversial. Sentiment about cams are more often listed as neutral. Notice the difference in the number of examples; cams are far more popular than hexes.
 
@@ -639,6 +637,7 @@ plt.xlabel('Sentiment')
 plt.xticks([0,1,2])
 plt.hist(df.pred_label)
 ```
+![overall](https://github.com/pdegner/pdegner.github.io/blob/master/images/mp/overall_sentiment.png)
 
 #### Has sentiment about Mammut changed over time?
 
@@ -657,6 +656,7 @@ plt.xlabel('Year')
 plt.xticks(rotation=45)
 plt.bar(mammut_grouped.index, mammut_grouped.pred_label)
 ```
+![over_time](https://github.com/pdegner/pdegner.github.io/blob/master/images/mp/mammut_sent.png)
 
 #### Do climbers who joined Mountain Project more recently have different feelings about Mammut than those who joined a long time ago? 
 
@@ -693,6 +693,8 @@ plt.xticks(rotation=45)
 plt.bar(mammut_grouped.index, mammut_grouped.pred_label)
 ```
 
+![mammut_age](https://github.com/pdegner/pdegner.github.io/blob/master/images/mp/mammut_account_age.png)
+
 #### Is the variance in the previous graph due to a smaller sample size of older accounts?
 
 There are much fewer older accounts, which is why there is more variance in the graph above at the right end of the graph.
@@ -708,6 +710,8 @@ plt.xlabel('Num Years as Member')
 plt.bar(mammut_grouby_count.index, mammut_grouby_count.join_year)
 ```
 
+![acct_age](https://github.com/pdegner/pdegner.github.io/blob/master/images/mp/account_age.png)
+
 # Conclusion
 
 In this article, I have walked through the steps of a complete machine learning project, including setting a goal, laying out a plan, gathering data, model training and analysis, and analysis of results. Specifically, I have demonstrated, with code, how to use DistilBERT and transfer learning for sentiment analysis on unlabeled data using MountainProject.com as an example. Although I was unable to conclude that a smaller, more relevant dataset is better than a larger, less relevant dataset (or vice versa), I was still able to label the sentiment of rock climbing gear forums and draw some conclusions from the results I found there.
@@ -715,6 +719,7 @@ In this article, I have walked through the steps of a complete machine learning 
 I wrote about this project on Medium: https://medium.com/@pattidegner_7/transfer-learning-example-using-keras-and-distilbert-with-code-e6e725f1fc2d
 
 All of these datasets have been posted on Kaggle.
+
 
 
 ##### Footnotes
