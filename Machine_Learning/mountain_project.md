@@ -18,7 +18,8 @@ jupyter:
 ### Introduction
 
 This notebook walks through an example of using DistilBERT and transfer learning for sentiment analysis. I start by setting a goal, laying out a plan, and scraping the data before moving on to model training, and finally cover some analysis of the results. The idea is to follow the project from beginning to end, so that the whole data science process is illustrated. As many data scientists know, machine learning is about 10% actual machine learning, and 90% other. I hope that this in-depth description of my project illustrates that point. 
-https://www.mountainproject.com/
+
+Here is a link to Mountain Project: https://www.mountainproject.com/
 
 
 ### The Goal of This Project
@@ -49,7 +50,7 @@ The closer your initial task is to your final task, the more effective transfer 
 This lack of data led me to my second labeled dataset: the routes on Mountain Project. Each route has a description and a star rating, and there are ~116,000 routes on the website. That is plenty of data, but the data isn’t exactly what I need because the way climbers talk about routes is different from the way climbers talk about gear. For example, I wouldn’t describe gear as “fun”, and I wouldn’t describe a route as “useful”.
 
 
-![image.png](attachment:image.png)
+![venn_diagram](/../images/mp/venn_diagram.png)
 
 
 Still, I think it will be better to train on route data than nothing because there is some overlap in the way climbers talk about anything, and the vernacular is quite unique with a lot of slang. For example, if I describe a route as “a sick climb with bomber gear” then the climb is high-quality. The hope is that my model will learn this unique climbing vocabulary and apply it to the gear review forums when it comes time to label them.
@@ -468,7 +469,8 @@ model.save_pretrained(save_directory)
 ```
 
 From here, the code to create a model that has a tuned DistilBERT at its base is the same as the code used to create the DistilBERT only model, except instead of `save_directory = "distilbert-base-uncased"`, use `save_directory = "models/route_model"`. After experimentation and parameter tweaking, the results for the four models looks like this:
-![image.png](attachment:image.png)
+
+![results](https://github.com/pdegner/pdegner.github.io/blob/master/images/mp/model_stats.png)
 
 
 The DistilBERT model with both route and gear data provided the best test accuracy at 81.6% for three way classification, and will be used to label the Mountain Project forums.
