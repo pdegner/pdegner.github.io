@@ -4,7 +4,7 @@
 
 ### Machine Learning Projects
 
-[Mountain Project Sentiment Analysis using DistilBERT](/Machine_Learning/mountain_project.md)
+[Mountain Project Sentiment Analysis using DistilBERT](/Machine_Learning/mp/mountain_project.md)
 
 <img src="images/MP.png?raw=true">
 
