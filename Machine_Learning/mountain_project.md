@@ -21,6 +21,8 @@ This notebook walks through an example of using DistilBERT and transfer learning
 
 Here is a link to Mountain Project: https://www.mountainproject.com/
 
+If the images are not rendering, you can view this directly on my GitHub: https://github.com/pdegner/pdegner.github.io/blob/master/Machine_Learning/mountain_project.md
+
 
 ### The Goal of This Project
 
