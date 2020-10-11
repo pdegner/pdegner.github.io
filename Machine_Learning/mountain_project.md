@@ -330,10 +330,10 @@ Of course, I want to build the best possible model for my task. I have two datas
 
 I decided to do a comparison of four models:
 
-    1. A model with DistilBERT only
-    2. A model with DistilBERT and route information
-    3. A model with DistilBERT and Trailspace information
-    4. A model with DistilBERT and both datasets
+   1. A model with DistilBERT only
+   2. A model with DistilBERT and route information
+   3. A model with DistilBERT and Trailspace information
+   4. A model with DistilBERT and both datasets
 
 On top of each DistilBERT is a small, identical neural network. This network is trained on 4000 labeled forum examples with a random seed set to 42 to prevent variation in the way the data is split. The lower DistilBERT layers were locked, meaning DistilBERT was not re-trained by the forum data. By keeping the networks identical, the only variation between the models is the dataset (or lack thereof) on which DistilBERT was tuned. This will allow me to conclude which dataset did the best at tuning DistilBERT for predicting forum post labels, without introducing noise from different types of models or variation in data split. Because there are three categories (positive, negative, and neutral), categorical cross-entropy was used as a loss function.
 
@@ -472,7 +472,6 @@ model.save_pretrained(save_directory)
 From here, the code to create a model that has a tuned DistilBERT at its base is the same as the code used to create the DistilBERT only model, except instead of `save_directory = "distilbert-base-uncased"`, use `save_directory = "models/route_model"`. After experimentation and parameter tweaking, the results for the four models looks like this:
 
 ![results](https://github.com/pdegner/pdegner.github.io/blob/master/images/mp/model_stats.png)
-
 
 The DistilBERT model with both route and gear data provided the best test accuracy at 81.6% for three way classification, and will be used to label the Mountain Project forums.
 
