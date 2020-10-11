@@ -4,7 +4,7 @@
 
 ### Machine Learning Projects
 
-[Mountain Project Sentiment Analysis using DistilBERT](/Machine_Learning/.ipynb_checkpoints/mountain_project-checkpoint.ipynb)
+[Mountain Project Sentiment Analysis using DistilBERT](/Machine_Learning/mountain_project.ipynb)
 
 <img src="images/MP.png?raw=true">
 
