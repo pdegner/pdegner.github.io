@@ -50,7 +50,7 @@ The closer your initial task is to your final task, the more effective transfer 
 This lack of data led me to my second labeled dataset: the routes on Mountain Project. Each route has a description and a star rating, and there are ~116,000 routes on the website. That is plenty of data, but the data isn’t exactly what I need because the way climbers talk about routes is different from the way climbers talk about gear. For example, I wouldn’t describe gear as “fun”, and I wouldn’t describe a route as “useful”.
 
 
-![venn_diagram](/../images/mp/venn_diagram.png)
+![venn_diagram](https://github.com/pdegner/pdegner.github.io/blob/master/images/mp/venn_diagram.png)
 
 
 Still, I think it will be better to train on route data than nothing because there is some overlap in the way climbers talk about anything, and the vernacular is quite unique with a lot of slang. For example, if I describe a route as “a sick climb with bomber gear” then the climb is high-quality. The hope is that my model will learn this unique climbing vocabulary and apply it to the gear review forums when it comes time to label them.
