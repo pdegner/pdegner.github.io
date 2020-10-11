@@ -175,7 +175,7 @@ The routes proved to be much more challenging. On Mountain Project, routes are s
 
 Thankfully, Mountain Project had another way around this. Within Mountain Project you can search for routes and sort them by difficulty, then by name. It will then output a lovely csv file that includes the URL for each route in your search results. Unfortunately, the search maxes out at 1000 routes, so you can’t get them all in one go. Not to be deterred by such a small inconvenience, I painstakingly went through each area and subarea, grabbed 1000 routes at a time, and saved the files to my computer until I had all 116,000 routes saved in separate csv files on my computer. 
 
-![search](https://github.com/pdegner/pdegner.github.io/blob/master/images/mp/mp_search.png)
+![search](mp_search.png)
 
 Once I had all the csv files, I combined them with this code:
 
@@ -473,7 +473,7 @@ model.save_pretrained(save_directory)
 
 From here, the code to create a model that has a tuned DistilBERT at its base is the same as the code used to create the DistilBERT only model, except instead of `save_directory = "distilbert-base-uncased"`, use `save_directory = "models/route_model"`. After experimentation and parameter tweaking, the results for the four models looks like this:
 
-![results](https://github.com/pdegner/pdegner.github.io/blob/master/images/mp/model_stats.png)
+![results](model_stats.png)
 
 The DistilBERT model with both route and gear data provided the best test accuracy at 81.6% for three way classification, and will be used to label the Mountain Project forums.
 
@@ -490,7 +490,7 @@ Hexes are “old-school” gear that work, but are outdated. Therefore, people d
 
 When there is a big sale on gear, people often post about it in the forums. As I was labeling data, if the post was simply “25% off on cams at website.com”, I labeled it as neutral. Cams are expensive, they go on sale frequently, and climbers need a lot of them, so sales on cams are posted frequently; all of these postings were labeled as neutral. There is also a lot of debate about the best kind of cams, which can lead to sentences with multiple sentiments, causing the label to come out as neutral. Additionally, people talk about cams in a neutral way when the recommended gear for a specific climb. I think that these things led my model to believe that cams are almost always neutral.
 
-![cam_hex](https://github.com/pdegner/pdegner.github.io/blob/master/images/mp/hex_vs_cam.png)
+![cam_hex](hex_vs_cam.png)
 
 Sentiment about hexes is quite controversial. Sentiment about cams are more often listed as neutral. Notice the difference in the number of examples; cams are far more popular than hexes.
 
@@ -638,7 +638,7 @@ plt.xlabel('Sentiment')
 plt.xticks([0,1,2])
 plt.hist(df.pred_label)
 ```
-![overall](https://github.com/pdegner/pdegner.github.io/blob/master/images/mp/overall_sentiment.png)
+![overall](overall_sentiment.png)
 
 #### Has sentiment about Mammut changed over time?
 
@@ -657,7 +657,7 @@ plt.xlabel('Year')
 plt.xticks(rotation=45)
 plt.bar(mammut_grouped.index, mammut_grouped.pred_label)
 ```
-![over_time](https://github.com/pdegner/pdegner.github.io/blob/master/images/mp/mammut_sent.png)
+![over_time](mammut_sent.png)
 
 #### Do climbers who joined Mountain Project more recently have different feelings about Mammut than those who joined a long time ago? 
 
@@ -694,7 +694,7 @@ plt.xticks(rotation=45)
 plt.bar(mammut_grouped.index, mammut_grouped.pred_label)
 ```
 
-![mammut_age](https://github.com/pdegner/pdegner.github.io/blob/master/images/mp/mammut_account_age.png)
+![mammut_age](mammut_account_age.png)
 
 #### Is the variance in the previous graph due to a smaller sample size of older accounts?
 
@@ -711,7 +711,7 @@ plt.xlabel('Num Years as Member')
 plt.bar(mammut_grouby_count.index, mammut_grouby_count.join_year)
 ```
 
-![acct_age](https://github.com/pdegner/pdegner.github.io/blob/master/images/mp/account_age.png)
+![acct_age](account_age.png)
 
 # Conclusion
 
