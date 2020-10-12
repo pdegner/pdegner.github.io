@@ -10,6 +10,12 @@
 
 ---
 
+[Audio Super-Resolution](/Machine_Learning/DeciBull/summary.md)
+
+<img src="/Machine_Learning/DeciBull/waves.png?raw=true">
+
+---
+
 [MNIST Handwritten Image Classification](/Machine_Learning/MNIST_ML/MNIST_ML.md)
 
 <img src="images/MNIST.png?raw=true"/>
