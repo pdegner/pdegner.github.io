@@ -5,19 +5,19 @@
 
 ## Machine Learning Projects (in Python)
 
-[Mountain Project Sentiment Analysis using Transfer Learning and DistilBERT](/Machine_Learning/mp/mountain_project.md)
+[Mountain Project Sentiment Analysis using Transfer Learning and DistilBERT (NLP, Deep Learning)](/Machine_Learning/mp/mountain_project.md)
 
 <img src="images/MP.png?raw=true">
 
 ---
 
-[Audio Super-Resolution](/Machine_Learning/DeciBull/summary.md)
+[Audio Super-Resolution (Deep Learning, GANs)](/Machine_Learning/DeciBull/summary.md)
 
 <img src="/Machine_Learning/DeciBull/waves.png?raw=true">
 
 ---
 
-[MNIST Handwritten Image Classification](/Machine_Learning/MNIST_ML/MNIST_ML.md)
+[MNIST Handwritten Image Classification (Naive Bayes, KNN)](/Machine_Learning/MNIST_ML/MNIST_ML.md)
 
 <img src="images/MNIST.png?raw=true"/>
 
