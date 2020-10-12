@@ -1,7 +1,6 @@
 # Digit Classification with KNN and Naive Bayes
 
-This was a project for my machine learning class
-
+This was one of my first projects in Machine Learning. Here, I explore the Naive Bayes and KNN algorithms. 
 
 ```python
 # This tells matplotlib not to try opening a new window for each plot.
@@ -27,7 +26,7 @@ from sklearn.metrics import classification_report
 np.random.seed(0)
 ```
 
-Load the data. Notice that the data gets partitioned into training, development, and test sets. Also, a small subset of the training data called mini_train_data and mini_train_labels gets defined, which you should use in all the experiments below, unless otherwise noted.
+Load the data into training, development, and test sets. A small subset of the training data called mini_train_data and mini_train_labels are used later to develop code. 
 
 
 ```python
@@ -81,10 +80,6 @@ plt.show()
 
 
 ### Produce k-Nearest-Neighbors model with k = [1,3,5,7,9].  
-
-Evaluate and show the performance of each model. For the 1-Nearest Neighbor model, show precision, recall, and F1 for each label. 
-
-
 
 ```python
 k_values = [1, 3, 5, 7, 9]
@@ -142,8 +137,6 @@ for k in k_values:
 
 
 ### Produce 1-Nearest Neighbor models using training data of various sizes.  
-
-Evaluate and show the performance of each model.  Additionally, show the time needed to measure the performance of each model.
 
 
 ```python
@@ -393,11 +386,9 @@ print('''
 
 **There is a common trend in all these models: the accuracy increases with more data points, and we know that accuracy will approach 1 with more and more data.**
 
+
+
 ### Produce a 1-Nearest Neighbor model and show the confusion matrix. 
-
-Which pair of digits does the model confuse most often? Show the images of these most often confused digits.
-
-
 
 ```python
 ## This one determines which digits are most frequently confused for each other.
@@ -489,16 +480,16 @@ for label in most_mislabeled:
 ![png](output_16_2.png)
 
 
+
+
 ### Blurring
 
 Implement a simplified Gaussian blur by just using the 8 neighboring pixels like this: the smoothed value of a pixel is a weighted combination of the original value and the 8 neighboring values.
 
-Apply your blur filter in 3 ways:
+The blur filter is applied in 3 ways:
 - Filter the training data but not the dev data
 - Filter the dev data but not the training data
 - Filter both training data and dev data
-
-Show the accuracy resulting no filter and from each way you apply the filter.
 
 
 ```python
@@ -565,12 +556,10 @@ print("When all data is filtered, accuracy is "+ str(len(errors)/len(mini_train_
     When all data is filtered, accuracy is 0.879
 
 
+
 ### Naive Bayes
 
-For the first model, map pixel values to either 0 or 1. Use some reasonable threshold to separate white from black.  Use `BernoulliNB` to produce the model.
-
-For the second model, map pixel values to either 0, 1, or 2, representing white, gray, or black. Use some reasonable thresholds to separate white from gray from black.  Use `MultinomialNB` to produce the model. 
-
+Map pixels to etiher 0 or 1 in the first model, and 0, 1, or 2 in the second model.
 
 ```python
 ##Pixels are black and white
@@ -682,9 +671,6 @@ print("Best alpha = ", nb.best_params_)
 
 ### Guassian Naive Bayes
 
-Apply a simple fix to this model so that the model accuracy is around the same as for a Bernoulli Naive Bayes model. Show the model accuracy before your fix and the model accuracy after your fix. 
-
-
 ```python
 # Create basic model
 model = GaussianNB()
@@ -735,7 +721,9 @@ print("Final model has accuracy " + str(final_model.score(dev_data, dev_labels))
 
 ### Generate digit images
 
-Produce a Bernoulli Naive Bayes model and then use it to generate a 10x20 grid with 20 example images of each digit. Each pixel output should be either 0 or 1, based on comparing some randomly generated number to the estimated probability of the pixel being either 0 or 1.  Show the grid.
+Produce a Bernoulli Naive Bayes model and then use it to generate a 10x20 grid with 20 example images of each digit. Each pixel output should be either 0 or 1, based on comparing some randomly generated number to the estimated probability of the pixel being either 0 or 1.  
+
+I talk more about image generation in this Medium post: https://medium.com/python-in-plain-english/three-ways-to-generate-images-with-python-86e39b15cd29
 
 
 ```python
@@ -765,11 +753,13 @@ plt.show()
 
 **These images are hazier due to the randomization aspect. Most of them bear a resemblance to the actual number, but for some, especially 4, 5, and 9, it is hard to tell what the number is supposed to be. Even though the pixel is compared to a random number, we can still see what the number is supposed ot be, for the most part. This shows how powerful Naive Bayes can be.**
 
+
+
 ### Calibration Analysis
 
-Recall that a strongly calibrated classifier is rougly 90% accurate when the posterior probability of the predicted class is 0.9. A weakly calibrated classifier is more accurate when the posterior probability of the predicted class is 90% than when it is 80%. A poorly calibrated classifier has no positive correlation between posterior probability and accuracy.  
+A strongly calibrated classifier is rougly 90% accurate when the posterior probability of the predicted class is 0.9. A weakly calibrated classifier is more accurate when the posterior probability of the predicted class is 90% than when it is 80%. A poorly calibrated classifier has no positive correlation between posterior probability and accuracy.  
 
-Produce a Bernoulli Naive Bayes model.  Evaluate performance: partition the dev set into several buckets based on the posterior probabilities of the predicted classes - think of a bin in a histogram- and then estimate the accuracy for each bucket. So, for each prediction, find the bucket to which the maximum posterior probability belongs, and update "correct" and "total" counters accordingly.  Show the accuracy for each bucket.
+For each prediction, find the bucket to which the maximum posterior probability belongs, and update "correct" and "total" counters accordingly.  Show the accuracy for each bucket.
 
 
 ```python
