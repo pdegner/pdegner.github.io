@@ -1,8 +1,9 @@
 # Portfolio
 
----
 
-### Machine Learning Projects (in Python)
+
+
+## Machine Learning Projects (in Python)
 
 [Mountain Project Sentiment Analysis using DistilBERT](/Machine_Learning/mp/mountain_project.md)
 
@@ -23,7 +24,10 @@
 ---
 
 
-### Projects Using R
+
+
+
+## Projects Using R
 
 [Experiment (A/B Analysis): Are Difficulty Labels helpful for Test Takers?](R/survey/deng_degner_heck_final.Rmd)
 
