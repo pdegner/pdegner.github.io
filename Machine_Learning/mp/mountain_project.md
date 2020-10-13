@@ -14,12 +14,11 @@ jupyter:
 
 # Transfer Learning with DistilBERT 
 
+Here is a link to Mountain Project: https://www.mountainproject.com
 
 ### Introduction
 
 This notebook walks through an example of using DistilBERT and transfer learning for sentiment analysis. I start by setting a goal, laying out a plan, and scraping the data before moving on to model training, and finally cover some analysis of the results. The idea is to follow the project from beginning to end, so that the whole data science process is illustrated. As many data scientists know, machine learning is about 10% actual machine learning, and 90% other. I hope that this in-depth description of my project illustrates that point. 
-
-Here is a link to Mountain Project: https://www.mountainproject.com
 
 ### The Goal of This Project
 
