@@ -11,7 +11,7 @@
 
 ---
 
-[Audio Super-Resolution (Deep Learning, GANs)](/Machine_Learning/DeciBull/summary.md)
+[Audio Super-Resolution (Deep Learning, GANs)](/Machine_Learning/DeciBull/Summary.md)
 
 <img src="/Machine_Learning/DeciBull/waves.png?raw=true">
 
