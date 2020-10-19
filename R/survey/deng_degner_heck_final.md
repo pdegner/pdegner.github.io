@@ -9,9 +9,17 @@ output:
 # Motivation
 
 Some people like a challenge; others prefer to be told exactly what to do. Usually, the difficulty of a problem is something we can only truly determine on our own.  However, we are often given some indication of a problem’s difficulty beforehand: by the problem's reputation or source, by the opinion of others who worked on it previously, or (in the case of exams like the GMAT) because we expect the problems to get harder as we proceed.
+
+
 The question that our experiment will answer is: How does the expectation of the difficulty of a problem change people's ability to solve it?  Does the indication of difficulty breed discouragement if a subject is told the problem is hard? Does it cause carelessness if the subject is told the problem is easy?  Conversely, does being told about difficulty inspire confidence if told the problem is easy, or extra determination if told it is hard?
+
+
 The answer to this question would be useful for educational institutions, and by those in management. The large test prep industry can use this information to help individuals who wish to improve their performance on standardized tests. Students may be interested in learning if knowing the difficulty of a problem could change their ability to do well on standardized tests.  The findings from this study could be applied in education more broadly: teachers could improve their students' accuracy rate on tests and homework by providing the difficulty. Similarly, many professions require problem solving abilities; companies may want to know if there is a benefit to revealing the true difficulty of a problem. If so, they may want to inform their employees of the difficulties beforehand to improve their employees' ability to solve the problems.  If employees spend more time on difficult problems and increase accuracy by spending less time on easier tasks, the result could be a more efficient workplace.
+
+
 Prior research notes that adaptive tests, tests that get harder as you go along, tend to improve students’ learning outcomes (Heitmann). On the other hand, additional research suggests that the adaptive tests create anxiety when it comes to difficult questions (Ponsoda). Our experiment can help us understand whether the performance improvements from the difficulty-adaptive tests are due entirely to the adaptiveness of the tests, or if the psychological experience of having some idea of question difficulty can play a helpful role as well. In the case of adaptive tests, the problems are often not given a difficulty label directly, but students are aware that the test will become harder as it goes. We plan to label the questions directly because we want to know if it is knowledge of the problem difficulty that has an effect on performance. 
+
+
     The experiment was delivered via online survey. Half of the survey respondents were randomly assigned to control and half were randomly assigned to treatment.  Control consisted of seeing 15 critical thinking problems at once without difficulty listed.  Treatment subjects were shown the same 15 questions at once with the difficulty rating included.  The difficulty levels were as follows: Easy, Medium, Hard, and Very Hard.  The questions are shown below.  The choices offered are provided in parentheses, with the correct answer bolded.
 
 
@@ -385,10 +393,20 @@ rsq
 # Conclusion
 
 In summary, our experiment showed a statistically and practically significant effect of showing difficulty labels to test takers. Additionally, it showed a significant effect of informing test takers of the difficulty of “hard” questions in particular.
+
+
 These conclusions can help explain behaviors in certain real world situations. For instance, it is possible that some high scorers on the GMAT attain their success by evaluating the difficulty of a question prior to attempting to solve it. This expectation changes their approach to the question (e.g. the amount of “second-guessing”) and ultimately improves accuracy. 
+
+
 In addition, we can apply these conclusions to improve performance in various contexts. A manager in a business can motivate employees to perform a task at a higher standard by indicating that it is a hard problem. Indeed, the significance of the treatment effect on the total score in the survey suggests that comprehensive conversations about difficulty can be useful across the full range of difficulty, again because it could help individuals assess the relative priority of tasks, taking into account capacity demands and level of complexity. Based on the results, we might also hypothesize that knowing “hard” questions are hard can be motivating in itself. However, this effect seems to diminish at the highest level of difficulty, “very hard” - practically speaking, the motivation can push people to strive beyond a baseline level, but not exceed the true limits of their ability and time.
+
+
 Future enhancements to our experiment could include some of the following options.  We would be interested in making questions open-ended.  Multiple choice questions allow survey respondents to use the process of elimination.  They may eliminate answer choices that seem ‘too easy’ if a question was labeled hard.  We could eliminate some of that risk by switchen to open-ended questions.  If given more time, we could also better calibrate the difficulty of our questions.  If we ran a robust pilot, we could separate questions that were only answered correctly by those who did well on the survey, and use those questions as the hard questions.  Alternatively, we could eliminate questions that almost everyone answered correctly.  If we had more resources and time, we would have gathered a larger sample of respondents and a more diverse sample of respondents.  We could add a covariate that measured survey takers' background.  This covariate could focus on their area of work, their major in college, or some set of questions that could isolate what they were a subject matter expert in, to account for variations caused by people’s greater ability to answer questions that they have expertise in.
+
+
 It would be interesting to break this experiment into many sub-experiments.  We could have one experiment that was only math questions, one experiment that was only grammar questions, etc., to see if the effect is more significant in some fields than others.  We could also go the other route and provide a survey with questions that tested more diverse subject matters: the more diverse the questions, the more likely it is that respondents would have to reach beyond their existing domain expertise.
+
+
 One final possible enhancement would be a longer survey with more questions, which would allow us to measure the impact of difficulty labels on a more granular scale.  With the 15 questions we used, each additional question answered correctly added 6.7% to the total percentage score.  If we had 30 questions, it would cut that increase in half.
 
 
