@@ -29,7 +29,7 @@
 
 ## Projects Using R
 
-[Experiment (A/B Analysis): Are Difficulty Labels helpful for Test Takers?](R/survey/deng_degner_heck_final.Rmd)
+[Experiment (A/B Analysis): Are Difficulty Labels helpful for Test Takers?](R/survey/deng_degner_heck_final.md)
 
 <img src="images/test.png?raw=true">
 
