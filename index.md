@@ -17,7 +17,11 @@
 
 ---
 
-[Car Damage Detection (Supervised and Unsupervised ML and NN)](/Machine_Learning/car_damage/final_writeup.md)
+[Car Damage Detection Part 1 (Naive Bayes and KNN)](/Machine_Learning/car_damage/sup_summary.md)
+
+[Car Damage Detection Part 2 (CNN)](/Machine_Learning/car_damage/sup_nn_summary.md)
+
+[Car Damage Detection Part 3 (Mask R-CNN)](/Machine_Learning/car_damage/unsup_summary.md)
 
 <img src="/Machine_Learning/car_damage/car_damage_cover.png?raw=true">
 
