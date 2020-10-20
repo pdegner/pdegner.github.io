@@ -11,6 +11,7 @@ The goal of this project is to to predict the location and severity of damage to
 ## Data
 
 Training and validation data was made available through Kaggle: https://www.kaggle.com/anujms/car-damage-detection#0001.JPEG
+
 51.5% of the test images are whole. So, to demonstrate improvement from always guessing whole, we must do better than 51.5% accuracy. 
 
 
@@ -27,8 +28,10 @@ Bilateral filtering is similar to Gaussian blurring in that it will replace each
 
 ### KNN
 The first attempt at classifying a car as damaged or whole uses K-nearest neighbors. Using a naive guess of k=5, my results were as follows:
-  `Accuracy when k=5 on unfiltered data is 60.99%`
-  `Accuracy when k=5 on filtered data is 59.64%`
+  ```
+  Accuracy when k=5 on unfiltered data is 60.99%
+  Accuracy when k=5 on filtered data is 59.64%
+  ```
   
 This is not great. The default for Scikit learn's `KNeighborsClassifier` weight parameter is `weights = uniform`. This means that all points in each neighborhood are weighted equally. If `weights = distance`, then the points are weighted by the inverse of their distance. This means that closer neighbors will have a greater influence than more distant neighbors. After changing the weights parameter to `weights = distance`, my results were as follows:
   ```
@@ -47,8 +50,10 @@ With a maxium accuracy of %62.11, perhaps KNN is not the best choice for this ta
 
 ### Naive Bayes
 A simple Bernolli Niave Bayes model yields the following results:
-  `Accuracy on unfiltered data is 61.66%`
-  `Accuracy on filtered data is 49.78%`
+  ```
+  Accuracy on unfiltered data is 61.66%
+  Accuracy on filtered data is 49.78%
+  ```
 Here, the filtered data is doing worse than the unfiltered data. Laplace smoothing made this model even worse, which makes sense because it removes edges that may help detect car damage. Because of this low accuracy, I did not persue Naive Bayes further.
 
 ### Why the issues?
@@ -65,5 +70,5 @@ Why are KNN and Naive Bayes performing so poorly? One problem is the diversity o
 I believe all of these issues are contributing to the inaccuracy of my models. 
 
 ## Next step: Neural Networks
-When traditional machine learning fails, it is time to call in the big guns: neural networks. 
+When traditional machine learning fails, it is time to call in the big guns: neural networks. Please check out part 2. 
 
