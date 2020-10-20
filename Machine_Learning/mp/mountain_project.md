@@ -15,6 +15,7 @@ jupyter:
 # Transfer Learning with DistilBERT 
 
 Here is a link to Mountain Project: https://www.mountainproject.com
+Here is a link to the GitHub page associated with this project: https://github.com/pdegner/DL_final_project
 
 ### Introduction
 
