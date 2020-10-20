@@ -15,7 +15,7 @@ Training and validation data was made available through Kaggle: https://www.kagg
 51.5% of the test images are whole. So, to demonstrate improvement from always guessing whole, we must do better than 51.5% accuracy. 
 
 
-# Supervised Learning
+# Traditional Supervised Learning
 
 The first attempt to classify cars as damaged or whole uses traditional supervised learning techniques Naive Bayes and KNN. In each of these methods, I compare the results of the original images and images that were blurred using a bilateral filter. 
 
