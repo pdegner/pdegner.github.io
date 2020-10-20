@@ -45,7 +45,7 @@ This is not great. The default for Scikit learn's `KNeighborsClassifier` weight 
 This is a little better, but still not much better than random guessing. Perhaps I need a different value for k?
 ![k_values](k_values.png)
 
-With a maxium accuracy of %62.11, perhaps KNN is not the best choice for this task. Next, I will try Naive Bayes.
+With a maxium accuracy of 62.11%, perhaps KNN is not the best choice for this task. Next, I will try Naive Bayes.
 
 
 ### Naive Bayes
