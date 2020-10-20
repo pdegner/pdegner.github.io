@@ -6,6 +6,8 @@ output:
 ---
 ##### Qian (Cathy) Deng, Patti Degner, and Heather Heck
 
+*This document is a work in progress*
+
 # Motivation
 
 Some people like a challenge; others prefer to be told exactly what to do. Usually, the difficulty of a problem is something we can only truly determine on our own.  However, we are often given some indication of a problem’s difficulty beforehand: by the problem's reputation or source, by the opinion of others who worked on it previously, or (in the case of exams like the GMAT) because we expect the problems to get harder as we proceed.
