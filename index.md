@@ -11,9 +11,15 @@
 
 ---
 
-[Audio Super-Resolution (Deep Learning, GANs)](/Machine_Learning/DeciBull/summary.md)
+[Audio Super-Resolution (Deep Learning, GANs) - Current Project](/Machine_Learning/DeciBull/summary.md)
 
 <img src="/Machine_Learning/DeciBull/waves.png?raw=true">
+
+---
+
+[Car Damage Detection (Supervised and Unsupervised ML and NN)](/Machine_Learning/car_damage/final_writeup.md)
+
+<img src="/Machine_Learning/car_damage/car_damage_cover.png?raw=true">
 
 ---
 
