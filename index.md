@@ -19,7 +19,7 @@
 
 [Car Damage Detection Part 1 (Image Classification with KNN, Naive Bayes, CNN, and Dropout)](/Machine_Learning/car_damage/sup_summary.md)
 
-[Car Damage Detection Part 3 (Identify damage location with Mask R-CNN)](/Machine_Learning/car_damage/unsupervised_learning/unsup_summary.md)
+[Car Damage Detection Part 2 (Identify damage location with Mask R-CNN)](/Machine_Learning/car_damage/unsupervised_learning/unsup_summary.md)
 
 <img src="/Machine_Learning/car_damage/car_damage_cover.png?raw=true">
 
