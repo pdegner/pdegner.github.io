@@ -8,7 +8,7 @@ The goal of this project is to to predict the location of damage to a car given 
 
 Part 1 of this project seeks to classify images of cars as damaged or whole.
 
-Part 2 applies masking to the images that outline the damage on the car. 
+Part 2 applies masking to the images that outlines the damage on the car. 
 
 ## Data
 
