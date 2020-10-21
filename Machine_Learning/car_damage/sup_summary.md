@@ -107,10 +107,7 @@ The training and validation still do not seem to have leveled off, so I trained 
 ![graphs4](m4_graphs.png)
 
 Below is a table summarizing the results of the two models. 
-|Model    |  train_acc |val_acc   |train_loss   |val_loss   |
-|---|---|---|---|---|
-|Basic model   |99.9%   |79.4%   |.0031   |1.52   |
-|Dropout model (final)  |85.9%   |85.0%   |.3101   |.3676   |
+![table](table.png)
 
 As you can see, the training accuracy is lower for the dropout model, but the validation accuracy is higher. This indicates that the dropout model with data augmentation has successfully reduced overfitting, and made the model more generalizable. The validation loss is lower for the dropout model as well, which is another indication that this model is better. 
 
