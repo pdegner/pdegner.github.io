@@ -5,7 +5,7 @@
 
 ## Machine Learning Projects (in Python)
 
-[Mountain Project Sentiment Analysis using Transfer Learning and DistilBERT (NLP, Deep Learning)](/Machine_Learning/mp/mountain_project.md)
+[Mountain Project Sentiment Analysis using Transfer Learning and DistilBERT (NLP, Deep Learning, end-to-end project)](/Machine_Learning/mp/mountain_project.md)
 
 <img src="images/MP.png?raw=true">
 
