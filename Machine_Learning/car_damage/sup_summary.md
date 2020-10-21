@@ -4,7 +4,7 @@
 
 ## Goal
 
-The goal of this project is to to predict the location of damage to a car given a provided image of the damaged car. This information could be used for faster insurance assessment and claims processing.
+The goal of this project is to to predict the location of damage to a car given an image of the damaged car. This information could be used for faster insurance assessment and claims processing.
 
 Part 1 of this project seeks to classify images of cars as damaged or whole.
 
