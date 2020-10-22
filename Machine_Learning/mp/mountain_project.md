@@ -15,6 +15,7 @@ jupyter:
 # Transfer Learning with DistilBERT 
 
 Here is a link to Mountain Project: https://www.mountainproject.com
+
 Here is a link to the GitHub page associated with this project: https://github.com/pdegner/DL_final_project
 
 ### Introduction
@@ -37,7 +38,7 @@ Unfortunately for me, the Mountain Project gear review forums are not labeled. T
 
 Enter transfer learning. Transfer learning is when a model trained on one task is used for a similar task. In this case, I have an unlabeled dataset and I want to assign labels to it. So, I need to create a model that is trained to predict labels on a labeled dataset, then use that model to create labels for my unlabeled forum dataset.
 
-Because this model will need to analyze natural language, I need my model to first understand language. This is why I am use a DistilBERT model*. The details about how DistilBERT works are beyond the scope of this article, but can be found in this description of BERT and this description of DistilBERT. Put simply, DistilBERT is a pretrained LSTM model that understands English. After loading the DistilBERT model, it can be fine-tuned on a more specific dataset. In this case, I want to tune DistilBERT so that it can accurately label climbing gear forums.
+Because this model will need to analyze natural language, I need my model to first understand language. This is why I am use a DistilBERT model*. The details about how DistilBERT works are beyond the scope of this article, but can be found in ![this](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270) description of BERT and ![this](https://medium.com/huggingface/distilbert-8cf3380435b5) description of DistilBERT. Put simply, DistilBERT is a pretrained LSTM model that understands English. After loading the DistilBERT model, it can be fine-tuned on a more specific dataset. In this case, I want to tune DistilBERT so that it can accurately label climbing gear forums.
 
 Thus, there will be two transfers of learning; first, knowledge contained in DistilBERT will be transferred to my labeled dataset. Then, I will train this model to label the sentiment of data. Second, I will transfer this model to my unlabeled forum dataset. This will allow my model to label that dataset. After the forum dataset is labeled with positive, negative, or neutral sentiment, I can run an analysis on what climbers think about different types of climbing gear.
 
