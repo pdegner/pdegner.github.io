@@ -29,7 +29,7 @@ The Mask R-CNN that we used (https://github.com/matterport/Mask_RCNN) is built o
 In order to train the model to outline car damage, we need to feed it some examples. Tracing the outline of the object you are looking for is called annotating, and we annotated our training and validation images using this website: http://www.robots.ox.ac.uk/~vgg/software/via/via-1.0.6.html. This saved the outlines in a JSON file that could be read by the model. 
 
 ### Implementation
-The implementation of this model is shown in this jupyter notebook: 
+The implementation of this model is shown in this ![jupyter notebook](../Mask_rcnn.ipynb). 
 
 ## Results
 The model was validated on 259 images and has an accuracy of 91.8%. Below are a few examples of the output:
