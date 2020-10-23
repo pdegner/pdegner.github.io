@@ -2,6 +2,8 @@
 
 ##### By Patti Degner, Bethany Keller, and Chris Sexton
 
+*Full code for this project is here: https://github.com/pdegner/Car_Damage_Detection*
+
 ## Goal
 
 The goal of this project is to to predict the location of damage to a car given an image of the damaged car. This information could be used for faster insurance assessment and claims processing.
