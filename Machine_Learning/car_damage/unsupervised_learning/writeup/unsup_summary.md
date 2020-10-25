@@ -2,7 +2,7 @@
 
 ##### By Patti Degner, Bethany Keller, and Chris Sexton
 
-*Full code for this project is here: https://github.com/pdegner/Car_Damage_Detection*
+*Full code for this project is here: [https://github.com/pdegner/Car_Damage_Detection](https://github.com/pdegner/Car_Damage_Detection)*
 
 ## Goal
 
