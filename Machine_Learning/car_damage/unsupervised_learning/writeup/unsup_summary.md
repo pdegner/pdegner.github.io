@@ -43,7 +43,7 @@ The model in general did a good job of caputring the damage inside the bounding 
 The model did not do as well with the damage masking. Overall, it generally did mask the damage, but not all of it (with the exception of the top-center image; it masked a shadow on the hood of a car). In the middle-left image, the model could tell that there was a broken window, but did not seem to know how to mask the damage. In the bottom-left image, a person is inside the bounding box. 
 
 #### How could this model be improved?
-  1. When annotating images, my team had slightly different methods. One person was drawing boxes around the images, while another was carefully outlining each curve of the damage. More consistent image annotation could lead to better accuracy. 
+  1. When annotating images, my team had slightly different methods. One person was drawing boxes around the damage, while another was carefully outlining each curve of the damage. More consistent image annotation could lead to better accuracy. 
   2. The images are really low quality. When we was annotating images, sometimes it was hard to tell where the damage was because the image is so pixilated. This could lead to inaccurate annotations, as well as general confusion for the model. 
   3. There are images with subjects that are not cars. The example above shows one image with a person in it, but there are several images with this issue. If these images were removed, the accuracy could be improved. 
   4. It may or may not be helpful to further classify images before attempting masking. For example, perhaps we could first classify the images as window damage, body damage, or totaled, then train separate models for each of these. Further experimentation is needed to see if this would be helpful.
