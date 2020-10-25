@@ -38,9 +38,9 @@ Unfortunately for me, the Mountain Project gear review forums are not labeled. T
 
 Enter transfer learning. Transfer learning is when a model trained on one task is used for a similar task. In this case, I have an unlabeled dataset and I want to assign labels to it. So, I need to create a model that is trained to predict labels on a labeled dataset, then use that model to create labels for my unlabeled forum dataset.
 
-Because this model will need to analyze natural language, I need my model to first understand language. This is why I am use a DistilBERT model*. The details about how DistilBERT works are beyond the scope of this article, but can be found in ![this](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270) description of BERT and ![this](https://medium.com/huggingface/distilbert-8cf3380435b5) description of DistilBERT. Put simply, DistilBERT is a pretrained LSTM model that understands English. After loading the DistilBERT model, it can be fine-tuned on a more specific dataset. In this case, I want to tune DistilBERT so that it can accurately label climbing gear forums.
+Because this model will need to analyze natural language, I need my model to first understand language. This is why I will use a DistilBERT model*. The details about how DistilBERT works are beyond the scope of this paper, but can be found in ![this](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270) description of BERT and ![this](https://medium.com/huggingface/distilbert-8cf3380435b5) description of DistilBERT. Put simply, DistilBERT is a pretrained transformer model that understands English. After loading the DistilBERT model, it can be fine-tuned on a more specific dataset. In this case, I want to tune DistilBERT so that it can accurately label climbing gear forums.
 
-Thus, there will be two transfers of learning; first, knowledge contained in DistilBERT will be transferred to my labeled dataset. Then, I will train this model to label the sentiment of data. Second, I will transfer this model to my unlabeled forum dataset. This will allow my model to label that dataset. After the forum dataset is labeled with positive, negative, or neutral sentiment, I can run an analysis on what climbers think about different types of climbing gear.
+Thus, there will be two transfers of learning; first, knowledge contained in DistilBERT will be transferred to my labeled dataset. Then, I will train this model to label the sentiment of data. Second, I will transfer this model, which has been trained to label sentiment, to my unlabeled forum dataset. This will allow my model to label that dataset. After the forum dataset is labeled with positive, negative, or neutral sentiment, I can run an analysis on what climbers think about different types of climbing gear.
 
 
 ### The Data
@@ -58,7 +58,7 @@ Still, I think it will be better to train on route data than nothing because the
 
 ## Step One: Scrape the Data
 
-My plan is laid out, and now it is time to actually gather some data. To do this, I needed to create a web scraper for Mountain Project and Trailspace. Prior to starting this project, I had no idea how to do any kind of web scraping. So, I watched this extremely helpful YouTube video about web scraping in Python using BeautifulSoup. Luckily for me, both Trailspace and the Mountain Project forums were quite easy to scrape. The code for the Trailspace scraping is below, as an example:
+My plan is laid out, and now it is time to actually gather some data. To do this, I needed to create a web scraper for Mountain Project and Trailspace. Prior to starting this project, I had no idea how to do any kind of web scraping. So, I watched ![this](https://www.youtube.com/watch?v=XQgXKtPSzUI&t=852s) extremely helpful YouTube video about web scraping in Python using BeautifulSoup. Luckily for me, both Trailspace and the Mountain Project forums were quite easy to scrape. The code for the Trailspace scraping is below, as an example:
 
 ```python
 from urllib.request import urlopen as uReq
