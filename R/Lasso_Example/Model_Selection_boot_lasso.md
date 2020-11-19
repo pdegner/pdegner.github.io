@@ -1,3 +1,4 @@
+usemathjax: true
 # Lasso and Bootstrap Examples
 
 ### mtcars Analysis - Lasso Example
