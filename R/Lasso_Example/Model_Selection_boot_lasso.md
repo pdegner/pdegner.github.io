@@ -1,11 +1,13 @@
 # Lasso and Bootstrap Examples
 
 ### mtcars Analysis - Lasso Example
-For response $y$ with predictors $x_{1},...,x_{p}$ the least squares estimator is the set of $\beta$s ,$\left(\hat{\beta_{0}}, \hat{\beta_{1}}, ..., \hat{\beta_{p}} \right)$, that minimizes
+For response $$y$$ with predictors $$x_{1},...,x_{p}$$ the least squares estimator is the set of $$\beta$$s ,$$\left(\hat{\beta_{0}}, \hat{\beta_{1}}, ..., \hat{\beta_{p}} \right)$$, that minimizes
 
-$$\frac{1}{N}\sum_{i=1}^{n} \left( y_{i} - \beta_{0} - \beta_{1}x_{1} - ... - \beta_{p}x_{ip} \right)^2$$
+$$
+\frac{1}{N}\sum_{i=1}^{n} \left( y_{i} - \beta_{0} - \beta_{1}x_{1} - ... - \beta_{p}x_{ip} \right)^2
+$$
 
-The lasso estimator, $\lambda$, is defined the same way as the least squared estimator, but it adds a penalty based on the value of lambda. This penalty will shrink the coefficients towards 0, creating a model with fewer predictors. This is especially helpful when the number of variables (p) is almost as big or bigger than the number of observations (n). 
+The lasso estimator, $$\lambda$$, is defined the same way as the least squared estimator, but it adds a penalty based on the value of lambda. This penalty will shrink the coefficients towards 0, creating a model with fewer predictors. This is especially helpful when the number of variables (p) is almost as big or bigger than the number of observations (n). 
 
 
 ```R
@@ -45,7 +47,7 @@ coefficients(lasso_m, s='lambda.min')
 
 I will use the variables cyl, hp, and wt in my model.
 
-$\lambda$ was selected using 10 folds cross validation with a set seed of 1. Many different values of lambda were fit, then 10 folds cross validation was used on the lambda values to determine which lambda provided the smallest cross validation error, ($\lambda$ min). Then, the lambda that produced the smallest model within one standard error of the lambda min model was selected ($\lambda$ 1se).
+$$\lambda$$ was selected using 10 folds cross validation with a set seed of 1. Many different values of lambda were fit, then 10 folds cross validation was used on the lambda values to determine which lambda provided the smallest cross validation error, ($\lambda$ min). Then, the lambda that produced the smallest model within one standard error of the lambda min model was selected ($$\lambda$$ 1se).
 
 The point of using the lasso model is to minimize the magnitude of coefficients. Some variables will have coefficients that start off large, then shrink to zero quickly through the lasso model, where others may start off with small coefficients but remain robust through the lasso model. This is because the size of the coefficient is related to the scale of the predictor. 
 
@@ -85,11 +87,11 @@ bootstrap_lm(m1) # This function code can be found at the site inside the source
 
 Is the coefficient for assets zero, or not?
 
-$H_{0}: \beta_{1} = 0$
+$$H_{0}: \beta_{1} = 0$$
 
-$H_{1}: \beta_{1} \neq 0$
+$$H_{1}: \beta_{1} \neq 0$$
 
-$p-value: 8.840 \times 10^{-5}$
+$$p-value: 8.840 \times 10^{-5}$$
 
 This is a very small p-value, so we can reject our null hypothesis and assume that the variable ‘assets’ does have an effect on the model.  
 
