@@ -25,11 +25,6 @@
 
 ---
 
-[MNIST Handwritten Image Classification (Naive Bayes, KNN)](/Machine_Learning/MNIST_ML/MNIST_ML.md)
-
-<img src="images/MNIST.png?raw=true"/>
-
----
 
 
 
