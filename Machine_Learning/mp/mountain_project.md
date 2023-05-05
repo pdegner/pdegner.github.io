@@ -34,7 +34,7 @@ The goal of this project is to label the sentiment of the gear review forums as 
 
 ### The Plan
 
-Unfortunately for me, the Mountain Project gear review forums are not labeled. The forums are a collection of thoughts and opinions, but there is no numerical value associated with them. By that I mean, I can write what I think about a piece of gear, but I don’t give it a star rating. This eliminates the possibility of direct supervised learning. (Yeah, sure, I could go and label the 100k+ forums by hand, but where is the fun in that? Nowhere, that sounds awful.)
+Unfortunately for me, the Mountain Project gear review forums are not labeled. The forums are a collection of thoughts and opinions, but there is no numerical value associated with them. By that I mean, I can write what I think about a piece of gear, but I don’t give it a star rating. This eliminates the possibility of direct supervised learning. (Yeah, sure, I could go and label the 100k+ forums by hand, but where is the fun in that?)
 
 Enter transfer learning. Transfer learning is when a model trained on one task is used for a similar task. In this case, I have an unlabeled dataset and I want to assign labels to it. So, I need to create a model that is trained to predict labels on a labeled dataset, then use that model to create labels for my unlabeled forum dataset.
 
