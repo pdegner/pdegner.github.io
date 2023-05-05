@@ -90,9 +90,9 @@ Although our model achived some impressive numerical results, the actual quality
 
 Everyone on our team learned a tremendous amount about audio data and how it works, including fingerprinting, fourier transform, GriffinLim, and more.
 We now know that it is easier to work with images rather than audio when it comes to neural networks. 
+We built a website using mkdocs and Flask.
 We learned how generative models work and other deep learning tools like:
 - PyTorch (none of us had used it before)
 - GANs
 - Autoencoders
-We built website using mkdocs and Flask
 
