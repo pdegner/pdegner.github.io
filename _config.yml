@@ -1,7 +1,8 @@
 title: Patricia Degner # your name (or website title) here
 logo: "/images/headshot.jpg?raw=true" # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
-  Machine Learning Engineer | Data Scientist | Software Development Engineer 
+  Machine Learning Engineer <br> Data Scientist <br> Software Development Engineer 
+  <br><br>
   Boulder, Colorado
   <br><br>
   Master of Information and Data Science at UC Berkeley
