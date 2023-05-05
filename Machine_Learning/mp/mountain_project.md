@@ -14,9 +14,9 @@ jupyter:
 
 # Transfer Learning with DistilBERT 
 
-Here is a link to Mountain Project: https://www.mountainproject.com
+Here is a link to [Mountain Project](https://www.mountainproject.com)
 
-Here is a link to the GitHub page associated with this project: https://github.com/pdegner/DL_final_project
+Here is a link to the [GitHub page](https://github.com/pdegner/DL_final_project) associated with this project. 
 
 ### Introduction
 
@@ -38,7 +38,7 @@ Unfortunately for me, the Mountain Project gear review forums are not labeled. T
 
 Enter transfer learning. Transfer learning is when a model trained on one task is used for a similar task. In this case, I have an unlabeled dataset and I want to assign labels to it. So, I need to create a model that is trained to predict labels on a labeled dataset, then use that model to create labels for my unlabeled forum dataset.
 
-Because this model will need to analyze natural language, I need my model to first understand language. This is why I will use a DistilBERT model*. The details about how DistilBERT works are beyond the scope of this paper, but can be found in ![this](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270) description of BERT and ![this](https://medium.com/huggingface/distilbert-8cf3380435b5) description of DistilBERT. Put simply, DistilBERT is a pretrained transformer model that understands English. After loading the DistilBERT model, it can be fine-tuned on a more specific dataset. In this case, I want to tune DistilBERT so that it can accurately label climbing gear forums.
+Because this model will need to analyze natural language, I need my model to first understand language. This is why I will use a DistilBERT model*. The details about how DistilBERT works are beyond the scope of this paper, but can be found in [this](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270) description of BERT and [this](https://medium.com/huggingface/distilbert-8cf3380435b5) description of DistilBERT. Put simply, DistilBERT is a pretrained transformer model that understands English. After loading the DistilBERT model, it can be fine-tuned on a more specific dataset. In this case, I want to tune DistilBERT so that it can accurately label climbing gear forums.
 
 Thus, there will be two transfers of learning; first, knowledge contained in DistilBERT will be transferred to my labeled dataset. Then, I will train this model to label the sentiment of data. Second, I will transfer this model, which has been trained to label sentiment, to my unlabeled forum dataset. This will allow my model to label that dataset. After the forum dataset is labeled with positive, negative, or neutral sentiment, I can run an analysis on what climbers think about different types of climbing gear.
 
@@ -58,7 +58,7 @@ Still, I think it will be better to train on route data than nothing because the
 
 ## Step One: Scrape the Data
 
-My plan is laid out, and now it is time to actually gather some data. To do this, I needed to create a web scraper for Mountain Project and Trailspace. Prior to starting this project, I had no idea how to do any kind of web scraping. So, I watched ![this](https://www.youtube.com/watch?v=XQgXKtPSzUI&t=852s) extremely helpful YouTube video about web scraping in Python using BeautifulSoup. Luckily for me, both Trailspace and the Mountain Project forums were quite easy to scrape. The code for the Trailspace scraping is below, as an example:
+My plan is laid out, and now it is time to actually gather some data. To do this, I needed to create a web scraper for Mountain Project and Trailspace. Prior to starting this project, I had no idea how to do any kind of web scraping. So, I watched [this](https://www.youtube.com/watch?v=XQgXKtPSzUI&t=852s) extremely helpful YouTube video about web scraping in Python using BeautifulSoup. Luckily for me, both Trailspace and the Mountain Project forums were quite easy to scrape. The code for the Trailspace scraping is below, as an example:
 
 ```python
 from urllib.request import urlopen as uReq
@@ -715,7 +715,7 @@ plt.bar(mammut_grouby_count.index, mammut_grouby_count.join_year)
 
 In this article, I have walked through the steps of a complete machine learning project, including setting a goal, laying out a plan, gathering data, model training and analysis, and analysis of results. Specifically, I have demonstrated, with code, how to use DistilBERT and transfer learning for sentiment analysis on unlabeled data using MountainProject.com as an example. Although I was unable to conclude that a smaller, more relevant dataset is better than a larger, less relevant dataset (or vice versa), I was still able to label the sentiment of rock climbing gear forums and draw some conclusions from the results I found there.
 
-I wrote about this project on Medium: https://medium.com/@pattidegner_7/transfer-learning-example-using-keras-and-distilbert-with-code-e6e725f1fc2d
+I wrote about this project on [Medium](https://medium.com/@pattidegner_7/transfer-learning-example-using-keras-and-distilbert-with-code-e6e725f1fc2d)
 
 All of these datasets have been posted on Kaggle.
 
@@ -735,6 +735,3 @@ All of these datasets have been posted on Kaggle.
 
 *Finally, there are many “closed projects” listed on Mountain Project. This means that the climb has been found, permission to climb it obtained, and it has been cleaned and bolted (if there are bolts on it), but the climb is very technically difficult and the person who put in the work to establish it has not yet been able to climb it without falling. It is common courtesy to allow the establisher to climb and name the route first, so these climbs will not have any ascents and will have unreliable star ratings.*
 
-```python
-
-```
