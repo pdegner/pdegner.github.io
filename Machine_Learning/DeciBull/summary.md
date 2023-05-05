@@ -54,7 +54,7 @@ For this project, we tried training all of these models, but ultimately we decid
 
 ![model](model.png)
 
-Full code can be viewed ![here](https://github.com/W210-Audio-Upscaling/Audio-Upscaling).
+Full code can be viewed [here](https://github.com/W210-Audio-Upscaling/Audio-Upscaling).
 
 #### Audio Fingerprinting
 The model was scored based on how similar the generated sample is to the original. Similarity is measured with audio fingerpringting. Audio fingerprinting is the process of converting raw and generated audio file to unique fingerprints (hashed to bits) and comparing the two files to get the bit error rate. By the way, this is how Shazam finds song matches when you record an audio clip.
@@ -64,7 +64,7 @@ Below are two samples: 3rd row is from early in the training steps, it is still 
 
 ![results](results.png)
 
-To share and distribute our model, we created a Flask application. The website with this application is no longer active, but here is a screenshot, and the code that was used to create it can be found ![here](https://github.com/W210-Audio-Upscaling/DeciBull_flask). The site could be used as follows:
+To share and distribute our model, we created a Flask application. The website with this application is no longer active, but here is a screenshot, and the code that was used to create it can be found [here](https://github.com/W210-Audio-Upscaling/DeciBull_flask). The site could be used as follows:
 
 1. Allow the website to record microphone input.
 2. Click "Record" and say a few words (just a few seconds)
