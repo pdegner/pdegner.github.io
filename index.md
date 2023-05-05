@@ -27,7 +27,7 @@ This end-to-end project uses deep learning for sentimant analysis of natural lan
 
 ### [Audio Super-Resolution - Thesis Project](/Machine_Learning/DeciBull/summary.md)
 
-This is an ongoing project that uses GANs to upsample low quality audio in real time. This was a team project.
+This project uses GANs and Autoencoders to upsample low quality audio in real time. This was a team project.
 
 <img src="/Machine_Learning/DeciBull/waves.png?raw=true">
 
@@ -35,7 +35,7 @@ This is an ongoing project that uses GANs to upsample low quality audio in real 
 
 ### [Car Damage Detection Part 1 (Image Classification)](/Machine_Learning/car_damage/sup_summary.md)
 
-This section uses traditional machine learning (KNN, Naive Bayes) and CNNs (with and without dropout) to classify images of cars as damaged or whole. This was a team project. 
+This section uses traditional machine learning (KNN, Naive Bayes) and CNNs (with and without dropout) to classify images of cars as damaged or whole. This was a solo project. 
 
 ### [Car Damage Detection Part 2 (Identify damage location)](/Machine_Learning/car_damage/unsupervised_learning/writeup/unsup_summary.md)
 
