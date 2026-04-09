@@ -1,15 +1,17 @@
-title: Patricia Degner # your name (or website title) here
+title: Patti Degner # your name (or website title) here
 logo: "/images/headshot.jpg?raw=true" # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
-  Software Development Engineer <br> Machine Learning Engineer <br> Data Scientist 
+  Senior Software Engineer
+  <br>
+  AWS Data Platforms &amp; ML Infrastructure
   <br><br>
-  Dillon, Colorado
+  Master of Information and Data Science, UC Berkeley
   <br><br>
-  Master of Information and Data Science at UC Berkeley
-  <br><br>
-  <a href="https://www.linkedin.com/in/patricia-degner/">View My LinkedIn Profile</a> 
-  <br><br>
-  <a href="https://github.com/pdegner/pdegner.github.io/blob/master/Resume.pdf">View My Resume</a> 
+  <a href="mailto:pattidegner@gmail.com">pattidegner@gmail.com</a>
+  <br>
+  <a href="https://www.linkedin.com/in/patricia-degner/">LinkedIn</a>
+  &nbsp;|&nbsp;
+  <a href="https://github.com/pdegner">GitHub</a>
 
 theme: jekyll-theme-minimal
 google_analytics: UA-000000-0 # your Google Analytics tracking ID here
