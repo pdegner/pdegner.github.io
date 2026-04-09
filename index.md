@@ -14,6 +14,22 @@ Outside of work, I'm an adventurer — I rock climb, ski, and mountaineer. I als
 
 ---
 
+# Skills & Technologies
+
+**Cloud & Infrastructure**
+AWS CDK (Python), Lambda, Step Functions, S3, Glue, Athena, SageMaker, RDS, DynamoDB, CloudWatch, SES, API Gateway · Infrastructure-as-code · CI/CD pipelines
+
+**Languages**
+Python · TypeScript · JavaScript · SQL
+
+**Data & ML**
+PostgreSQL · PySpark · Airflow · data pipeline design · ML infrastructure
+
+**Frontend**
+React · react-admin
+
+---
+
 # Portfolio
 
 The projects below are from my graduate work at UC Berkeley. For information about my more recent professional work, feel free to reach out at [pattidegner@gmail.com](mailto:pattidegner@gmail.com) or connect on [LinkedIn](https://www.linkedin.com/in/patricia-degner/).
