@@ -1,3 +1,9 @@
+---
+layout: single
+author_profile: true
+permalink: /
+---
+
 # About Me
 
 I'm a Senior Software Engineer focused on AWS-based data platforms and ML infrastructure. My career has taken me from data science and analysis into backend software engineering, where I now spend most of my time building the systems that make data and ML work reliably at scale.
