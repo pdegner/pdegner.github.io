@@ -2,15 +2,14 @@
 layout: single
 author_profile: true
 permalink: /
+title: "About Me"
 ---
-
-# About Me
 
 I'm a Senior Software Engineer focused on AWS-based data platforms and ML infrastructure. My career has taken me from data science and analysis into backend software engineering, where I now spend most of my time building the systems that make data and ML work reliably at scale.
 
 Currently, I'm a Senior Developer at InfoBate, where I established the team's AWS CDK codebase in Python from scratch, built and automated multiple data ingestion and reporting pipelines, and work directly with clients to design and deliver data features end-to-end. I've worked across services including S3, Glue, Athena, SageMaker, RDS, Step Functions, Lambda, and CloudWatch, translating messy business requirements into backend data views and React-based UIs.
 
-I'm also the founder and sole developer of [Sprig](https://github.com/pdegner), an independent mobile app project I'm building from the ground up. Sprig encourages people to notice and photograph natural details in the world around them, with engagement mechanics like streaks and badges. I'm architecting the cloud infrastructure on AWS (RDS PostgreSQL, S3, DynamoDB) and building across the full stack — backend, infrastructure, and mobile.
+I'm also the founder and sole developer of [Sprig](https://sprig-nature.app/), an independent mobile app project I'm building from the ground up. Sprig encourages people to notice and photograph natural details in the world around them, with engagement mechanics like streaks and badges. I'm architecting the cloud infrastructure on AWS (RDS PostgreSQL, S3, DynamoDB) and building across the full stack — backend, infrastructure, and mobile.
 
 Before InfoBate, I was a Software Development Engineer at Amazon, where I optimized an AWS-based data pipeline for AmazonGo handling 2M+ data points daily and designed a resumable Step Functions workflow that saved ~13 hours of compute per execution. Prior to Amazon, I was a Decision Scientist at Ibotta, where I automated data workflows using Airflow and refactored legacy PySpark pipelines.
 
