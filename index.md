@@ -5,17 +5,24 @@ permalink: /
 title: "About Me"
 ---
 
-I'm a Senior Software Engineer focused on AWS-based data platforms and ML infrastructure. My career has taken me from data science and analysis into backend software engineering, where I now spend most of my time building the systems that make data and ML work reliably at scale.
+I'm a Senior Software Engineer focused on backend systems, AWS infrastructure, data platforms, and agentic AI. My career began in data science and analytics before moving into software engineering, where I now build the systems, infrastructure, and developer tools that make complex workflows reliable and maintainable.
 
-Currently, I'm a Senior Developer at InfoBate, where I established the team's AWS CDK codebase in Python from scratch, built and automated multiple data ingestion and reporting pipelines, and work directly with clients to design and deliver data features end-to-end. I've worked across services including S3, Glue, Athena, SageMaker, RDS, Step Functions, Lambda, and CloudWatch, translating messy business requirements into backend data views and React-based UIs.
+Currently, I'm a Senior Developer at InfoBate. I established the team's AWS CDK codebase and CI/CD pipeline in Python from scratch and have designed production data pipelines using services including Lambda, Step Functions, S3, Glue, Athena, SageMaker, RDS, and CloudWatch.
 
-I'm also the founder and sole developer of [Sprig](https://sprig-nature.app/), an independent mobile app project I'm building from the ground up. Sprig encourages people to notice and photograph natural details in the world around them, with engagement mechanics like streaks and badges. I'm architecting the cloud infrastructure on AWS (RDS PostgreSQL, S3, DynamoDB) and building across the full stack — backend, infrastructure, and mobile.
+More recently, I designed and built an internal multi-agent software engineering platform that turns natural-language requests into reviewed GitHub pull requests across multiple production repositories. The system uses LangGraph and the Claude Agent SDK, with human approval gates, scoped tools, automated evaluations, and guardrails around agent behavior. I also built an MCP server in Python that gives agents persistent access to tagged notes, reusable prompts, and project context across sessions.
 
-Before InfoBate, I was a Software Development Engineer at Amazon, where I optimized an AWS-based data pipeline for AmazonGo handling 2M+ data points daily and designed a resumable Step Functions workflow that saved ~13 hours of compute per execution. Prior to Amazon, I was a Decision Scientist at Ibotta, where I automated data workflows using Airflow and refactored legacy PySpark pipelines.
+My work often sits at the intersection of technical architecture and practical business needs. I partner directly with clients and teammates to turn ambiguous requirements into shipped software, from database schemas and optimized queries to backend workflows and React-based interfaces.
 
-I started my path in data science during undergrad, then spent a year teaching English in Vietnam before returning to the US and earning my Master of Information and Data Science at UC Berkeley. My graduate ML coursework is showcased in the portfolio below.
+Before InfoBate, I was a Software Development Engineer at Amazon, where I worked on AWS data pipelines for Amazon Go processing more than two million events each day. I also designed a resumable Step Functions workflow that eliminated redundant processing and saved approximately 13 hours of compute per execution.
 
-Outside of work, I'm an adventurer — I rock climb, ski, and mountaineer. I also converted a Dodge ProMaster into a campervan, which was one of the most rewarding projects I've taken on: learn, plan, build, repeat.
+Prior to Amazon, I was a Decision Scientist at Ibotta, where I automated recurring data workflows with Airflow, migrated legacy processes to PySpark, and improved the performance and maintainability of analytics systems.
+
+I earned a Master of Information and Data Science from UC Berkeley, where my graduate work included deep learning, natural-language processing, and an audio super-resolution thesis built with PyTorch. Some of that earlier coursework and experimentation is featured in this portfolio.
+
+I started my path in data science during undergrad, then spent a year teaching English in Vietnam before returning to the US and earning my Master of Information and Data Science at UC Berkeley. My graduate ML coursework is showcased in this portfolio.
+
+Outside of work, I spend as much time as possible rock climbing, skiing, mountaineering, and exploring the mountains. I also converted a Dodge ProMaster into a campervan, one of my favorite examples of the process I enjoy most: learn, plan, build, troubleshoot, and repeat.
+
 
 ---
 
