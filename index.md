@@ -19,7 +19,7 @@ Prior to Amazon, I was a Decision Scientist at Ibotta, where I automated recurri
 
 I earned a Master of Information and Data Science from UC Berkeley, where my graduate work included deep learning, natural-language processing, and an audio super-resolution thesis built with PyTorch. Some of that earlier coursework and experimentation is featured in this portfolio.
 
-I started my path in data science during undergrad, then spent a year teaching English in Vietnam before returning to the US and earning my Master of Information and Data Science at UC Berkeley. My graduate ML coursework is showcased in this portfolio.
+I started my path in data science during undergrad, then spent a year teaching English in Vietnam before returning to the US and earning my Master's degree.
 
 Outside of work, I spend as much time as possible rock climbing, skiing, mountaineering, and exploring the mountains. I also converted a Dodge ProMaster into a campervan, one of my favorite examples of the process I enjoy most: learn, plan, build, troubleshoot, and repeat.
 
