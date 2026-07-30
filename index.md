@@ -29,13 +29,16 @@ Outside of work, I spend as much time as possible rock climbing, skiing, mountai
 # Skills & Technologies
 
 **Cloud & Infrastructure**
-AWS CDK (Python), Lambda, Step Functions, S3, Glue, Athena, SageMaker, RDS, DynamoDB, CloudWatch, SES, API Gateway · Infrastructure-as-code · CI/CD pipelines
+AWS CDK (Python) · Lambda · Step Functions · S3 · Glue · Athena · SageMaker · RDS · DynamoDB · CloudWatch · EventBridge · SES · API Gateway · VPC · IAM · Infrastructure as code · CI/CD · GitHub Actions
 
-**Languages**
-Python · TypeScript · JavaScript · SQL
+**Backend & Languages**
+Python · SQL · TypeScript · JavaScript · PostgreSQL · API development · Data modeling · Query optimization · Automated testing
+
+**Agentic AI**
+LangGraph · Claude Agent SDK · Model Context Protocol (FastMCP) · Multi-agent workflows · Evaluation harnesses · Human-in-the-loop systems · Tool scoping and guardrails
 
 **Data & ML**
-PostgreSQL · PySpark · Airflow · data pipeline design · ML infrastructure
+PySpark · Airflow · Pandas · PyTorch · Spark SQL · Data pipeline design · Data ingestion · ML infrastructure
 
 **Frontend**
 React · react-admin
