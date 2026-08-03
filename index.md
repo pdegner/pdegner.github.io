@@ -2,79 +2,44 @@
 layout: single
 author_profile: true
 permalink: /
-title: "About Me"
+title: Senior Software Engineer
 ---
 
-I'm a Senior Software Engineer focused on backend systems, AWS infrastructure, data platforms, and agentic AI. My career began in data science and analytics before moving into software engineering, where I now build the systems, infrastructure, and developer tools that make complex workflows reliable and maintainable.
+I build AWS data platforms, backend systems, and agentic developer tools. My work focuses on turning ambiguous operational problems into reliable production software that is easier to operate, extend, and trust.
 
-Currently, I'm a Senior Developer at InfoBate. I established the team's AWS CDK codebase and CI/CD pipeline in Python from scratch and have designed production data pipelines using services including Lambda, Step Functions, S3, Glue, Athena, SageMaker, RDS, and CloudWatch.
+## Selected Work
 
-More recently, I designed and built an internal multi-agent software engineering platform that turns natural-language requests into reviewed GitHub pull requests across multiple production repositories. The system uses LangGraph and the Claude Agent SDK, with human approval gates, scoped tools, automated evaluations, and guardrails around agent behavior. I also built an MCP server in Python that gives agents persistent access to tagged notes, reusable prompts, and project context across sessions.
+### Agentic Software Engineering Platform
 
-My work often sits at the intersection of technical architecture and practical business needs. I partner directly with clients and teammates to turn ambiguous requirements into shipped software, from database schemas and optimized queries to backend workflows and React-based interfaces.
+Designed and built an internal multi-agent workflow that turns natural-language client requests into reviewed pull requests across three production repositories.
 
-Before InfoBate, I was a Software Development Engineer at Amazon, where I worked on AWS data pipelines for Amazon Go processing more than two million events each day. I also designed a resumable Step Functions workflow that eliminated redundant processing and saved approximately 13 hours of compute per execution.
+The platform uses LangGraph, the Claude Agent SDK, scoped tools, automated evaluations, human approval gates, and guardrails around agent behavior. I also built a Python MCP server that gives agents persistent access to tagged notes, reusable prompts, and project context across sessions.
 
-Prior to Amazon, I was a Decision Scientist at Ibotta, where I automated recurring data workflows with Airflow, migrated legacy processes to PySpark, and improved the performance and maintainability of analytics systems.
+### AWS Infrastructure Platform
 
-I earned a Master of Information and Data Science from UC Berkeley, where my graduate work included deep learning, natural-language processing, and an audio super-resolution thesis built with PyTorch. Some of that earlier coursework and experimentation is featured in this portfolio.
+Established my team's AWS CDK codebase and CI/CD pipeline in Python from scratch, creating reusable infrastructure patterns and a consistent path from development through deployment.
 
-I started my path in data science during undergrad, then spent a year teaching English in Vietnam before returning to the US and earning my Master's degree.
+I design and maintain production systems using Lambda, Step Functions, S3, Glue, Athena, SageMaker, RDS, DynamoDB, CloudWatch, EventBridge, and related AWS services.
 
-Outside of work, I spend as much time as possible rock climbing, skiing, mountaineering, and exploring the mountains. I also converted a Dodge ProMaster into a campervan, one of my favorite examples of the process I enjoy most: learn, plan, build, troubleshoot, and repeat.
+### Production Data Systems
 
+At Amazon, I worked on AWS data pipelines for Amazon Go that processed more than two million events each day. I designed a resumable Step Functions workflow that eliminated redundant processing and saved approximately 13 hours of compute per execution.
 
----
+Earlier, at Ibotta, I automated recurring data workflows with Airflow, migrated legacy processes to PySpark, and improved the performance and maintainability of analytics systems.
 
-# Skills & Technologies
+## How I Work
 
-**Cloud & Infrastructure**
-AWS CDK (Python) · Lambda · Step Functions · S3 · Glue · Athena · SageMaker · RDS · DynamoDB · CloudWatch · EventBridge · SES · API Gateway · VPC · IAM · Infrastructure as code · CI/CD · GitHub Actions
+My work sits at the intersection of technical architecture and practical business needs. I partner directly with clients and teammates to turn unclear requirements into shipped software, from database schemas and backend workflows to infrastructure and React-based interfaces.
 
-**Backend & Languages**
-Python · SQL · TypeScript · JavaScript · PostgreSQL · API development · Data modeling · Query optimization · Automated testing
+## Skills
 
-**Agentic AI**
-LangGraph · Claude Agent SDK · Model Context Protocol (FastMCP) · Multi-agent workflows · Evaluation harnesses · Human-in-the-loop systems · Tool scoping and guardrails
+**Core:** Python · SQL · TypeScript · JavaScript · PostgreSQL · React  
+**Cloud & Infrastructure:** AWS CDK · Lambda · Step Functions · S3 · Glue · Athena · SageMaker · RDS · CI/CD · GitHub Actions  
+**Agentic AI:** LangGraph · Claude Agent SDK · Model Context Protocol · Evaluation harnesses · Human-in-the-loop workflows  
+**Data:** PySpark · Airflow · Pandas · Data pipeline design · ML infrastructure
 
-**Data & ML**
-PySpark · Airflow · Pandas · PyTorch · Spark SQL · Data pipeline design · Data ingestion · ML infrastructure
+## About
 
-**Frontend**
-React · react-admin
+I earned a Master of Information and Data Science from UC Berkeley after beginning my career in data science and analytics. Outside of work, I spend as much time as possible rock climbing, skiing, mountaineering, and exploring the mountains. I also converted a Dodge ProMaster into a campervan—one of my favorite examples of the process I enjoy most: learn, plan, build, troubleshoot, and repeat.
 
----
-
-# Portfolio
-
-The projects below are from my graduate work at UC Berkeley. For information about my more recent professional work, feel free to reach out at [pattidegner@gmail.com](mailto:pattidegner@gmail.com) or connect on [LinkedIn](https://www.linkedin.com/in/patricia-degner/).
-
-## Machine Learning Projects (Python)
-
-### [Mountain Project Sentiment Analysis using Transfer Learning and DistilBERT](/Machine_Learning/mp/mountain_project.md)
-
-An end-to-end deep learning project for sentiment analysis of natural language. The goal is to label sentiment of Mountain Project forum posts to determine what gear climbers consider best. Covers webscraping, data cleaning, model selection, and final analysis. Solo project.
-
-<img src="images/MP.png?raw=true">
-
----
-
-### [Audio Super-Resolution — Thesis Project](/Machine_Learning/DeciBull/summary.md)
-
-Uses GANs and Autoencoders to upsample low-quality audio in real time. Team project.
-
-<img src="/Machine_Learning/DeciBull/waves.png?raw=true">
-
----
-
-### [Car Damage Detection Part 1 — Image Classification](/Machine_Learning/car_damage/sup_summary.md)
-
-Uses traditional ML (KNN, Naive Bayes) and CNNs (with and without dropout) to classify images of cars as damaged or whole. Solo project.
-
-### [Car Damage Detection Part 2 — Damage Localization](/Machine_Learning/car_damage/unsupervised_learning/writeup/unsup_summary.md)
-
-Uses Mask R-CNN to identify the location of damage on a car. Team project.
-
-<img src="/Machine_Learning/car_damage/car_damage_cover.png?raw=true">
-
----
+My earlier machine-learning and graduate-school work is available under [Graduate Projects](/graduate-projects/).
