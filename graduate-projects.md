@@ -25,6 +25,6 @@ A deep-learning project using GANs and autoencoders to upsample low-quality audi
 
 A comparison of traditional machine-learning approaches and convolutional neural networks for classifying vehicle images as damaged or undamaged. Solo project.
 
-### [Car Damage Detection Part 2 — Damage (/Machine_Learning/car_damage/unsupervised_learning/writeup/unsup_summary.md)
+### [Car Damage Detection Part 2 — Damage](/Machine_Learning/car_damage/unsupervised_learning/writeup/unsup_summary.md)
 
 A computer-vision project using Mask R-CNN to identify and localize damaged areas in vehicle images. Team project.
