@@ -1,3 +1,7 @@
+---
+title: "Car Damage Detection: Part 2"
+---
+
 # Car Damage Detection: Part 2
 
 ##### By Patti Degner, Bethany Keller, and Chris Sexton

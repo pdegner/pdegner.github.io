@@ -1,51 +1,55 @@
-## Developer Portfolio Landing Page Template
+# pdegner.github.io
 
-### Introduction
+Source for [pdegner.github.io](https://pdegner.github.io) — my portfolio.
 
-Use this template if you need a quick developer / data science portfolio! Based on a Minimal Jekyll theme for GitHub Pages.
+Plain Jekyll on GitHub Pages. No theme gem, no CSS framework, no build step for
+the styles, and no JavaScript beyond a ~25-line theme toggle.
 
-<img src="images/demo.gif?raw=true"/>
+## Layout of the repo
 
-### Installation
-
-See full step by step tutorial [on Medium](https://medium.com/@evanca/set-up-your-portfolio-website-in-less-than-10-minutes-with-github-pages-d0efa8ff56fd).
-___
-
-You can use the editor on GitHub to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```
+_config.yml          site metadata, nav, SEO defaults
+_data/
+  projects.yml       featured projects + the archive list
+  experience.yml     selected professional work
+  skills.yml         grouped skills
+_layouts/
+  base.html          document shell
+  home.html          the homepage, assembled from includes
+  page.html          standard content page
+  archive-doc.html   wrapper for the imported graduate write-ups
+_includes/           head, header, footer, and the reusable card components
+assets/
+  css/main.css       the whole design system: tokens first, then components
+  img/               headshot, favicon, Open Graph card
+index.md             front matter only — content lives in _data + _layouts
+project-archive.md   renders _data/projects.yml `archive:`
+Machine_Learning/, Python/, R/   graduate-school write-ups (archive)
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Content is kept out of the markup: to add or edit a project, change
+`_data/projects.yml`. `_includes/project-card.html` renders whatever is there.
 
-### Roadmap
+## Styling
 
-See the [open issues](https://github.com/evanca/machine-learning_optimizing-app-offers-with-starbucks/issues) for a list of proposed features (and known issues).
-___
+`assets/css/main.css` is plain CSS, served as-is. Colors, spacing, type scale,
+radii and layout widths are all custom properties declared once at the top.
 
-### References
+Both themes are defined in a single token block using `light-dark()`, so there
+is no duplicated dark-mode stylesheet. The page follows the visitor's OS setting
+by default; the header toggle writes an explicit choice to `localStorage` and
+overrides `color-scheme` on `:root`. To ship dark as the default instead, set
+`color-scheme: dark light` on `:root`.
 
-[1] Jekyll theme "Minimal" for GitHub Pages: https://github.com/pages-themes/minimal (CC0 1.0 Universal License)
-<br>[2] Dummy photo via: https://pixabay.com/photos/man-male-adult-person-caucasian-1209494/ (Pixabay License)
-<br>[3] Dummy thumbnail image created by rawpixel.com: https://www.freepik.com/free-vector/set-elements-infographic_2807573.htm (Standard Freepik License)
+## Running it locally
+
+```sh
+bundle install
+bundle exec jekyll serve
+```
+
+Then open <http://localhost:4000>.
+
+## License
+
+Code is MIT (see `LICENSE`). Project write-ups and images are not.

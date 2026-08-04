@@ -1,0 +1,31 @@
+# Selected professional work. Deliberately high level — no client names,
+# no proprietary architecture. Sourced from the previous site copy.
+- title: "Agentic Development Platform"
+  summary: >-
+    Designed and built an internal multi-agent workflow that turns
+    plain-English client requests into reviewed pull requests across three
+    production repositories.
+  detail: >-
+    Built on LangGraph and the Claude Agent SDK with scoped tools, automated
+    evaluations, human approval gates, and guardrails around agent behavior.
+  tech: ["LangGraph", "Claude Agent SDK", "MCP", "Evals", "Human-in-the-loop"]
+
+- title: "AWS Infrastructure Platform"
+  summary: >-
+    Established my team's AWS CDK codebase and CI/CD pipeline in Python from
+    scratch, creating reusable infrastructure patterns and a consistent path
+    from local development through production deployment.
+  detail: >-
+    I design and maintain production systems across Lambda, Step Functions, S3,
+    Glue, Athena, SageMaker, RDS, DynamoDB, CloudWatch, and EventBridge.
+  tech: ["AWS CDK", "Python", "CI/CD", "Lambda", "Step Functions"]
+
+- title: "High-Volume Data Systems"
+  summary: >-
+    Built and improved production data pipelines processing millions of events
+    per day, including a resumable Step Functions workflow that removed
+    redundant processing and saved roughly 13 hours of compute per execution.
+  detail: >-
+    Earlier work automated recurring data workflows with Airflow and migrated
+    legacy processes to PySpark, improving both runtime and maintainability.
+  tech: ["Step Functions", "PySpark", "Airflow", "Glue", "Athena"]

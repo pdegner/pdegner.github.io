@@ -1,3 +1,7 @@
+---
+title: "Audio Super-Resolution using Deep Learning"
+---
+
 # Audio Super-Resolution using Deep Learning
 
 ### Goal

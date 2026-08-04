@@ -1,0 +1,45 @@
+- group: "Cloud & Infrastructure"
+  items:
+    - AWS CDK
+    - Lambda
+    - Step Functions
+    - S3
+    - Glue
+    - Athena
+    - RDS
+    - DynamoDB
+    - EventBridge
+    - CloudWatch
+    - CI/CD
+    - GitHub Actions
+    - Docker
+
+- group: "Languages"
+  items:
+    - Python
+    - SQL
+    - TypeScript
+    - JavaScript
+    - R
+
+- group: "Data & AI"
+  items:
+    - PySpark
+    - Airflow
+    - pandas
+    - PostgreSQL
+    - pgvector
+    - AWS Bedrock
+    - SageMaker
+    - LangGraph
+    - Claude Agent SDK
+    - Model Context Protocol
+    - RAG
+    - Evaluation harnesses
+
+- group: "Frontend"
+  items:
+    - React
+    - TypeScript
+    - HTML
+    - CSS

@@ -1,40 +1,83 @@
-remote_theme: mmistakes/minimal-mistakes
-minimal_mistakes_skin: neon
-
 title: Patti Degner
-name: Patti Degner
-description: "Senior Software Engineer specializing in AWS-based data platforms and Agentic AI"
+tagline: Senior Software Engineer
+description: >-
+  Senior software engineer building production systems on AWS — cloud
+  infrastructure, backend services, data platforms, and agentic AI tooling.
 url: "https://pdegner.github.io"
 baseurl: ""
 locale: "en-US"
+lang: en_US
 
 markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+
 plugins:
-  - jekyll-remote-theme
-  - jekyll-include-cache
   - jekyll-seo-tag
+  - jekyll-redirect-from
+  - jekyll-sitemap
 
 author:
   name: Patti Degner
-  avatar: "/images/headshot.jpg"
-  bio: "Senior Software Engineer · AWS data platforms & Agentic AI"
   email: pattidegner@gmail.com
+
+# Used by jekyll-seo-tag to emit sameAs links.
+social:
+  name: Patti Degner
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:pattidegner@gmail.com"
-    - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/patricia-degner/"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/pdegner"
+    - https://github.com/pdegner
+    - https://www.linkedin.com/in/patricia-degner/
+
+# Rendered in the header, hero and footer.
+profile:
+  role: "Senior Software Engineer"
+  location: "Denver, Colorado"
+  email: "pattidegner@gmail.com"
+  github: "https://github.com/pdegner"
+  github_handle: "pdegner"
+  linkedin: "https://www.linkedin.com/in/patricia-degner/"
+  resume: "/Resume.pdf"
+  image: "/assets/img/headshot.jpg"
+
+nav:
+  - title: "Projects"
+    url: "/#projects"
+  - title: "Experience"
+    url: "/#experience"
+  - title: "About"
+    url: "/#about"
+  - title: "Archive"
+    url: "/project-archive/"
 
 defaults:
   - scope:
       path: ""
     values:
-      layout: single
-      author_profile: true
+      layout: page
+      image: /assets/img/og.jpg
+  - scope:
+      path: "Machine_Learning"
+    values:
+      layout: archive-doc
+  - scope:
+      path: "Python"
+    values:
+      layout: archive-doc
+  - scope:
+      path: "R"
+    values:
+      layout: archive-doc
 
 encoding: "utf-8"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - vendor
+  - .jekyll-cache
+  - "**/.ipynb_checkpoints"
+  - "**/.DS_Store"

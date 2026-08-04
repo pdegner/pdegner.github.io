@@ -1,3 +1,7 @@
+---
+title: "What Drives the Price of Wine?"
+---
+
 # Wine Value
 The goal of this project is to see what factors affect the price of wine. 
 All of the files can be viewed here: https://github.com/pdegner/Portfolio/tree/master/Python/Wine_Project 

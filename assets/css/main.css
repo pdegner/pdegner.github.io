@@ -1,0 +1,1218 @@
+/* ==========================================================================
+   Patti Degner — portfolio
+   Plain CSS, no build step. Tokens first, then layout, then components.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Tokens
+   -------------------------------------------------------------------------- */
+
+:root {
+  color-scheme: light dark;
+
+  /* Type */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+
+  --step--2: 0.75rem;
+  --step--1: 0.8125rem;
+  --step-0: 1rem;
+  --step-1: clamp(1.0625rem, 1.02rem + 0.22vw, 1.1875rem);
+  --step-2: clamp(1.1875rem, 1.11rem + 0.38vw, 1.375rem);
+  --step-3: clamp(1.375rem, 1.24rem + 0.66vw, 1.75rem);
+  --step-4: clamp(1.75rem, 1.51rem + 1.15vw, 2.375rem);
+  --step-5: clamp(2.375rem, 1.72rem + 3.1vw, 4rem);
+
+  --leading-tight: 1.12;
+  --leading-snug: 1.35;
+  --leading-body: 1.65;
+
+  /* Space */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-s: 1rem;
+  --space-m: 1.5rem;
+  --space-l: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: clamp(4rem, 3rem + 5vw, 7rem);
+
+  /* Layout */
+  --container: 68rem;
+  --container-narrow: 44rem;
+  --measure: 66ch;
+  --gutter: clamp(1.25rem, 0.9rem + 1.7vw, 2.5rem);
+
+  /* Shape */
+  --radius: 10px;
+  --radius-sm: 6px;
+  --border-width: 1px;
+  --shadow-sm: 0 1px 2px var(--shadow-near);
+  --shadow-md: 0 1px 2px var(--shadow-near), 0 8px 24px -12px var(--shadow-far);
+
+  /* Color.
+     Every value is declared once with light-dark(); which half is used follows
+     the `color-scheme` property, so the theme switches with no duplicated
+     block and no JavaScript required. The toggle below only overrides
+     `color-scheme`. */
+  --bg: light-dark(#fbfaf8, #0f1113);
+  --surface: light-dark(#ffffff, #16191d);
+  --surface-2: light-dark(#f4f2ef, #1c2026);
+  --text: light-dark(#17191c, #e9ebee);
+  --text-muted: light-dark(#5a6068, #9ba3ad);
+  --border: light-dark(#e2ded8, #262b31);
+  --border-strong: light-dark(#cfcac2, #363d45);
+  --accent: light-dark(#145c5c, #64c9bf);
+  --accent-hover: light-dark(#0e4444, #8adcd3);
+  --accent-contrast: light-dark(#ffffff, #0f1113);
+  --accent-soft: light-dark(#e7f0ef, #16302e);
+  --code-bg: light-dark(#f4f2ef, #1c2026);
+  --shadow-near: light-dark(rgb(20 24 28 / 0.05), rgb(0 0 0 / 0.35));
+  --shadow-far: light-dark(rgb(20 24 28 / 0.14), rgb(0 0 0 / 0.6));
+}
+
+/* Explicit user choice, set by the toggle and restored from localStorage. */
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+/* --------------------------------------------------------------------------
+   2. Base
+   -------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: var(--step-0);
+  line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  line-height: var(--leading-tight);
+  letter-spacing: -0.021em;
+  font-weight: 640;
+  text-wrap: balance;
+}
+
+p {
+  margin: 0 0 var(--space-s);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--space-s);
+  top: var(--space-s);
+  z-index: 100;
+  padding: 0.6rem 1rem;
+  background: var(--surface);
+  color: var(--text);
+  border: var(--border-width) solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  font-size: var(--step--1);
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   3. Layout primitives
+   -------------------------------------------------------------------------- */
+
+.wrap {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.wrap--narrow {
+  max-width: var(--container-narrow);
+}
+
+.section {
+  padding-block: var(--space-3xl);
+  border-top: var(--border-width) solid var(--border);
+}
+
+.section--alt {
+  background: var(--surface-2);
+}
+
+.section--tight {
+  padding-block: var(--space-2xl);
+}
+
+/* --------------------------------------------------------------------------
+   4. Shared type helpers
+   -------------------------------------------------------------------------- */
+
+.eyebrow {
+  margin: 0 0 var(--space-xs);
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.lede {
+  font-size: var(--step-2);
+  line-height: var(--leading-snug);
+  color: var(--text);
+  letter-spacing: -0.011em;
+}
+
+/* --------------------------------------------------------------------------
+   5. Header / footer
+   -------------------------------------------------------------------------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: saturate(150%) blur(8px);
+  border-bottom: var(--border-width) solid var(--border);
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .site-header {
+    background: var(--bg);
+  }
+}
+
+.site-header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-xs) var(--space-m);
+  min-height: 4rem;
+  padding-block: var(--space-xs);
+}
+
+.site-header__brand {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2xs);
+  margin-right: auto;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.site-header__name {
+  font-weight: 640;
+  letter-spacing: -0.015em;
+}
+
+.site-header__role {
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  color: var(--text-muted);
+}
+
+.site-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s) var(--space-m);
+  list-style: none;
+}
+
+.site-nav__list a {
+  color: var(--text-muted);
+  font-size: var(--step--1);
+  text-decoration: none;
+}
+
+.site-nav__list a:hover {
+  color: var(--text);
+  text-decoration: underline;
+}
+
+.theme-toggle {
+  display: inline-grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--text);
+  border-color: var(--border-strong);
+  background: var(--surface-2);
+}
+
+.theme-toggle > svg {
+  grid-area: 1 / 1;
+}
+
+/* Show the icon for the theme the button will switch *to*: a moon while the
+   page is light, a sun while it is dark. aria-pressed tracks "dark is on". */
+.theme-toggle__sun {
+  display: none;
+}
+
+.theme-toggle[aria-pressed="true"] .theme-toggle__sun {
+  display: block;
+}
+
+.theme-toggle[aria-pressed="true"] .theme-toggle__moon {
+  display: none;
+}
+
+.site-footer {
+  border-top: var(--border-width) solid var(--border);
+  padding-block: var(--space-l);
+  color: var(--text-muted);
+  font-size: var(--step--1);
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-s) var(--space-m);
+}
+
+.site-footer__note {
+  margin: 0;
+  max-width: 44ch;
+}
+
+.site-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s) var(--space-m);
+  list-style: none;
+}
+
+/* --------------------------------------------------------------------------
+   6. Buttons
+   -------------------------------------------------------------------------- */
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-top: var(--space-l);
+}
+
+.btn-row--tight {
+  margin-top: var(--space-m);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.6rem 1.05rem;
+  border: var(--border-width) solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text);
+  font-size: var(--step--1);
+  font-weight: 520;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.btn:hover {
+  border-color: var(--text-muted);
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.btn--primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.btn--primary:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: var(--accent-contrast);
+}
+
+.icon {
+  flex: none;
+  width: 1em;
+  height: 1em;
+}
+
+/* --------------------------------------------------------------------------
+   7. Hero
+   -------------------------------------------------------------------------- */
+
+.hero {
+  padding-block: clamp(3.5rem, 2rem + 7vw, 7.5rem) var(--space-3xl);
+}
+
+.hero__title {
+  font-size: var(--step-5);
+  letter-spacing: -0.033em;
+  margin-bottom: var(--space-m);
+  max-width: 16ch;
+}
+
+.hero__copy {
+  max-width: var(--measure);
+  display: grid;
+  gap: var(--space-s);
+}
+
+.hero__copy > p:not(.lede) {
+  color: var(--text-muted);
+  max-width: 60ch;
+}
+
+/* --------------------------------------------------------------------------
+   8. Section header
+   -------------------------------------------------------------------------- */
+
+.section-header {
+  max-width: var(--measure);
+  margin-bottom: var(--space-xl);
+}
+
+.section-header__title {
+  font-size: var(--step-4);
+}
+
+.section-header__lede {
+  margin: var(--space-s) 0 0;
+  color: var(--text-muted);
+  max-width: 58ch;
+}
+
+/* --------------------------------------------------------------------------
+   9. Project cards
+   -------------------------------------------------------------------------- */
+
+/* Grid and flex children default to min-width:auto, which lets wide content
+   (diagrams, code, tables) push the whole page sideways. Opt every layout
+   child out of that so overflow stays inside its own scroll container. */
+.cards,
+.card,
+.work,
+.about,
+.skills,
+.skills__group,
+.card > *,
+.work > *,
+.about > *,
+.skills__group > * {
+  min-width: 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-l);
+}
+
+.card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-l);
+  padding: clamp(1.25rem, 0.9rem + 1.6vw, 2rem);
+  background: var(--surface);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  scroll-margin-top: 6rem;
+}
+
+@media (min-width: 56rem) {
+  .card {
+    grid-template-columns: minmax(0, 21rem) minmax(0, 1fr);
+    gap: var(--space-xl);
+    align-items: start;
+  }
+}
+
+.card__title {
+  font-size: var(--step-3);
+  margin-bottom: var(--space-s);
+}
+
+.card__summary {
+  font-size: var(--step-1);
+  line-height: var(--leading-snug);
+  max-width: 58ch;
+}
+
+.card__detail {
+  color: var(--text-muted);
+  max-width: 62ch;
+}
+
+.highlights {
+  list-style: none;
+  margin: var(--space-m) 0 0;
+  display: grid;
+  gap: var(--space-2xs);
+  max-width: 62ch;
+}
+
+.highlights li {
+  position: relative;
+  padding-left: 1.4rem;
+  font-size: var(--step--1);
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.highlights li::before {
+  content: "";
+  position: absolute;
+  left: 0.25rem;
+  top: 0.62em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.highlights code {
+  color: var(--text);
+  background: var(--code-bg);
+  padding: 0.05em 0.35em;
+  border-radius: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   10. Tags
+   -------------------------------------------------------------------------- */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3xs) var(--space-2xs);
+  list-style: none;
+}
+
+.tags--card {
+  margin-top: var(--space-m);
+}
+
+.tag {
+  padding: 0.2rem 0.55rem;
+  border: var(--border-width) solid var(--border);
+  border-radius: 4px;
+  background: var(--surface-2);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+.section--alt .tag {
+  background: var(--surface);
+}
+
+/* --------------------------------------------------------------------------
+   11. Project card visuals
+   -------------------------------------------------------------------------- */
+
+.visual {
+  margin: 0;
+  padding: var(--space-m);
+  background: var(--surface-2);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow-x: auto;
+}
+
+.section--alt .visual {
+  background: var(--surface);
+}
+
+.visual__caption {
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: var(--space-s);
+}
+
+.visual--placeholder {
+  display: grid;
+  place-items: center;
+  min-height: 11rem;
+  border-style: dashed;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Pipeline flow diagram */
+.flow {
+  list-style: none;
+  display: grid;
+  gap: 0;
+}
+
+.flow__step {
+  position: relative;
+  display: grid;
+  gap: var(--space-3xs);
+  padding-bottom: 1.1rem;
+}
+
+.flow__step:not(.flow__step--end)::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0.3rem;
+  width: 1px;
+  height: 0.55rem;
+  background: var(--border-strong);
+}
+
+.flow__step--end {
+  padding-bottom: 0;
+}
+
+.flow__step--parallel {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--space-2xs);
+}
+
+.flow__name {
+  display: block;
+  padding: 0.5rem 0.7rem;
+  border: var(--border-width) solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  font-size: var(--step--1);
+  line-height: 1.35;
+  text-align: center;
+}
+
+.section--alt .flow__name {
+  background: var(--surface-2);
+}
+
+.flow__name small {
+  display: block;
+  margin-top: 0.1rem;
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  color: var(--text-muted);
+}
+
+.flow__name code {
+  font-size: 0.95em;
+}
+
+.flow__step--end .flow__name {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* MCP surface table */
+.surface {
+  margin: 0;
+  display: grid;
+  gap: var(--space-s);
+}
+
+.surface__row {
+  display: grid;
+  gap: var(--space-3xs);
+}
+
+.surface dt {
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.surface dd {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3xs);
+}
+
+.surface code {
+  padding: 0.15rem 0.45rem;
+  border: var(--border-width) solid var(--border-strong);
+  border-radius: 4px;
+  background: var(--surface);
+  font-size: var(--step--2);
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+.section--alt .surface code {
+  background: var(--surface-2);
+}
+
+/* --------------------------------------------------------------------------
+   12. Professional work
+   -------------------------------------------------------------------------- */
+
+.work-list {
+  display: grid;
+  gap: var(--space-s);
+}
+
+.work {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-2xs);
+  padding: var(--space-m);
+  background: var(--surface);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+@media (min-width: 48rem) {
+  .work {
+    grid-template-columns: minmax(0, 14rem) minmax(0, 1fr);
+    gap: var(--space-m);
+    padding: var(--space-m) var(--space-l);
+  }
+}
+
+.work__title {
+  font-size: var(--step-1);
+  letter-spacing: -0.012em;
+}
+
+.work__copy {
+  display: grid;
+  gap: var(--space-2xs);
+  max-width: 62ch;
+  font-size: var(--step--1);
+}
+
+.work__copy p {
+  margin: 0;
+}
+
+.work__detail {
+  color: var(--text-muted);
+}
+
+.tags--sm {
+  margin-top: var(--space-3xs);
+}
+
+/* --------------------------------------------------------------------------
+   13. Skills
+   -------------------------------------------------------------------------- */
+
+.skills {
+  margin: 0;
+  display: grid;
+  gap: var(--space-m);
+}
+
+.skills__group {
+  display: grid;
+  gap: var(--space-2xs);
+  padding-top: var(--space-m);
+  border-top: var(--border-width) solid var(--border);
+}
+
+.skills__group:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+@media (min-width: 44rem) {
+  .skills__group {
+    grid-template-columns: minmax(0, 12rem) minmax(0, 1fr);
+    gap: var(--space-m);
+    align-items: baseline;
+  }
+}
+
+.skills__label {
+  font-weight: 600;
+  font-size: var(--step--1);
+  letter-spacing: -0.005em;
+}
+
+.skills__items {
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   14. About
+   -------------------------------------------------------------------------- */
+
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-l);
+  align-items: start;
+}
+
+@media (min-width: 48rem) {
+  .about {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 15rem);
+    gap: var(--space-2xl);
+  }
+}
+
+.about__copy {
+  max-width: var(--measure);
+}
+
+.about__links {
+  font-size: var(--step--1);
+  color: var(--text-muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+}
+
+.about__figure {
+  margin: 0;
+  max-width: 15rem;
+}
+
+.about__figure img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: var(--border-width) solid var(--border);
+}
+
+/* --------------------------------------------------------------------------
+   15. Earlier-work callout
+   -------------------------------------------------------------------------- */
+
+.callout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-m);
+  padding: var(--space-l);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.callout__body {
+  max-width: 52ch;
+}
+
+.callout__title {
+  font-size: var(--step-2);
+  margin-bottom: var(--space-2xs);
+}
+
+.callout__body p {
+  color: var(--text-muted);
+  font-size: var(--step--1);
+  margin: 0;
+}
+
+.callout .btn {
+  margin-top: 0;
+}
+
+/* --------------------------------------------------------------------------
+   16. Interior pages
+   -------------------------------------------------------------------------- */
+
+.page {
+  padding-block: var(--space-2xl) var(--space-3xl);
+}
+
+.page__header {
+  margin-bottom: var(--space-xl);
+}
+
+.page__title {
+  font-size: var(--step-4);
+}
+
+.page__header .lede {
+  margin-top: var(--space-s);
+  color: var(--text-muted);
+  font-size: var(--step-1);
+}
+
+.doc-back {
+  margin-bottom: var(--space-l);
+  font-size: var(--step--1);
+}
+
+.doc-back a {
+  text-decoration: none;
+}
+
+.doc-back a:hover {
+  text-decoration: underline;
+}
+
+/* Archive list */
+.archive-list {
+  list-style: none;
+  display: grid;
+  gap: 0;
+}
+
+.archive-item {
+  padding-block: var(--space-m);
+  border-top: var(--border-width) solid var(--border);
+}
+
+.archive-item:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.archive-item__title {
+  font-size: var(--step-1);
+  margin-bottom: var(--space-3xs);
+}
+
+.archive-item__title a {
+  text-decoration: none;
+}
+
+.archive-item__title a:hover {
+  text-decoration: underline;
+}
+
+.archive-item__summary {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--step--1);
+  max-width: 64ch;
+}
+
+.archive-item__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2xs) var(--space-s);
+  margin: var(--space-2xs) 0 0;
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  color: var(--text-muted);
+}
+
+.archive-item__note {
+  color: var(--text-muted);
+  opacity: 0.85;
+}
+
+/* --------------------------------------------------------------------------
+   17. Prose (markdown content)
+   -------------------------------------------------------------------------- */
+
+.prose {
+  max-width: var(--measure);
+}
+
+.prose > * + * {
+  margin-top: var(--space-s);
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-2xs);
+  scroll-margin-top: 6rem;
+}
+
+.prose > :first-child {
+  margin-top: 0;
+}
+
+.prose h1 {
+  font-size: var(--step-4);
+}
+
+.prose h2 {
+  font-size: var(--step-3);
+}
+
+.prose h3 {
+  font-size: var(--step-2);
+}
+
+.prose h4 {
+  font-size: var(--step-1);
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.4em;
+}
+
+.prose li + li {
+  margin-top: var(--space-3xs);
+}
+
+.prose img {
+  display: block;
+  border-radius: var(--radius-sm);
+  border: var(--border-width) solid var(--border);
+  background: var(--surface);
+}
+
+.prose blockquote {
+  margin: var(--space-m) 0;
+  padding-left: var(--space-m);
+  border-left: 3px solid var(--border-strong);
+  color: var(--text-muted);
+}
+
+.prose hr {
+  margin-block: var(--space-xl);
+  border: 0;
+  border-top: var(--border-width) solid var(--border);
+}
+
+.prose code {
+  padding: 0.1em 0.35em;
+  background: var(--code-bg);
+  border-radius: 4px;
+}
+
+.prose pre {
+  margin: var(--space-m) 0;
+  padding: var(--space-s) var(--space-m);
+  background: var(--code-bg);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow-x: auto;
+  font-size: var(--step--1);
+  line-height: 1.55;
+}
+
+.prose pre code {
+  padding: 0;
+  background: none;
+  font-size: inherit;
+}
+
+.prose table {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: var(--step--1);
+}
+
+.prose th,
+.prose td {
+  padding: 0.5rem 0.75rem;
+  border: var(--border-width) solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.prose th {
+  background: var(--surface-2);
+  font-weight: 600;
+}
+
+/* Documents imported from notebooks are wider than typical prose. */
+.prose--doc {
+  max-width: none;
+}
+
+.prose--doc > p,
+.prose--doc > ul,
+.prose--doc > ol,
+.prose--doc > blockquote {
+  max-width: var(--measure);
+}
+
+/* --------------------------------------------------------------------------
+   18. Syntax highlighting (Rouge)
+   -------------------------------------------------------------------------- */
+
+.highlight .c,
+.highlight .c1,
+.highlight .cm,
+.highlight .cs {
+  color: var(--text-muted);
+  font-style: italic;
+}
+.highlight .k,
+.highlight .kd,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr,
+.highlight .kt,
+.highlight .kc {
+  color: light-dark(#7c33e8, #c4a7f5);
+  font-weight: 600;
+}
+.highlight .s,
+.highlight .s1,
+.highlight .s2,
+.highlight .sb,
+.highlight .sd,
+.highlight .se,
+.highlight .sh,
+.highlight .si,
+.highlight .sx,
+.highlight .sr {
+  color: light-dark(#0a6b52, #7ecfab);
+}
+.highlight .m,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .mo,
+.highlight .il {
+  color: light-dark(#9a4b25, #e0a075);
+}
+.highlight .nf,
+.highlight .nb,
+.highlight .nc {
+  color: light-dark(#1a5fb4, #82b5f0);
+}
+.highlight .o,
+.highlight .ow {
+  color: var(--text);
+}
+.highlight .err {
+  color: light-dark(#b3261e, #f2a09a);
+}
+
+/* --------------------------------------------------------------------------
+   19. Print
+   -------------------------------------------------------------------------- */
+
+@media print {
+  .site-header,
+  .site-footer,
+  .skip-link,
+  .btn-row {
+    display: none;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  .section {
+    padding-block: 1.5rem;
+    border-top: 1px solid #ccc;
+  }
+}

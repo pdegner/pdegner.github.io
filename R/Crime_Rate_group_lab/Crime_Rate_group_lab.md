@@ -1,3 +1,7 @@
+---
+title: "Determinants of Crime Rate"
+---
+
 ## Introduction
 
 The goal of this study is to understand determinants of crime in North Carolina given a dataset from 1987, and recommend a policy to help reduce the crime rate. Our research questions is: "Which factors increase the crime rate?" We need to determine which covariates affect the crime rate (crmrte) the most, making it our dependent variable. 

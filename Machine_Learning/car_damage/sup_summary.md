@@ -1,3 +1,7 @@
+---
+title: "Car Damage Detection: Part 1"
+---
+
 # Car Damage Detection: Part 1
 
 ##### By Patti Degner

@@ -1,3 +1,7 @@
+---
+title: "ClinVar Data Cleaning — Notebook"
+---
+
 # Data Cleaning
 The file that I cleaned is too big to upload to GitHub, but can be found at this link: https://drive.google.com/file/d/1Zps0YssoJbZHrn6iLte2RDLlgruhAX1s/view?usp=sharing
 

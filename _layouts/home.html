@@ -1,0 +1,123 @@
+---
+layout: base
+---
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">{{ site.title }}{% if site.profile.location %} &middot; {{ site.profile.location }}{% endif %}</p>
+    <h1 class="hero__title">{{ site.profile.role }}</h1>
+    <div class="hero__copy">
+      <p class="lede">I build production systems on AWS and developer tools powered by AI.</p>
+      <p>
+        My work spans cloud infrastructure, backend engineering, data platforms,
+        and agentic workflows, with an emphasis on systems that are reliable,
+        maintainable, and genuinely useful.
+      </p>
+    </div>
+    <div class="btn-row">
+      <a class="btn btn--primary" href="#projects">View featured projects</a>
+      <a class="btn" href="{{ site.profile.github }}">{% include icon.html name="github" %}GitHub</a>
+      <a class="btn" href="{{ site.profile.linkedin }}">{% include icon.html name="linkedin" %}LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="wrap">
+    {% include section-header.html
+       eyebrow="Featured projects"
+       title="Things I built end to end"
+       lede="Two personal projects, each taken from an idea to something deployed, tested, and documented. Every claim below is checkable against the source." %}
+
+    <div class="cards">
+      {%- for project in site.data.projects.featured %}
+        {% include project-card.html project=project %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="experience">
+  <div class="wrap">
+    {% include section-header.html
+       eyebrow="Selected professional work"
+       title="Production systems, at scale"
+       lede="A short sample of senior-level work. Kept deliberately high level — no client names or proprietary architecture." %}
+
+    <div class="work-list">
+      {%- for item in site.data.experience %}
+        {% include work-item.html item=item %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="skills">
+  <div class="wrap">
+    {% include section-header.html eyebrow="Skills" title="What I work with" %}
+
+    <dl class="skills">
+      {%- for group in site.data.skills %}
+      <div class="skills__group">
+        <dt class="skills__label">{{ group.group }}</dt>
+        <dd class="skills__items">
+          <ul class="tags">
+            {%- for item in group.items %}
+            <li class="tag">{{ item }}</li>
+            {%- endfor %}
+          </ul>
+        </dd>
+      </div>
+      {%- endfor %}
+    </dl>
+  </div>
+</section>
+
+<section class="section section--alt" id="about">
+  <div class="wrap">
+    {% include section-header.html eyebrow="About" title="Hi, I'm Patti" %}
+
+    <div class="about">
+      <div class="about__copy prose">
+        <p>
+          I'm a software engineer with a background in data science and a
+          master's degree from UC&nbsp;Berkeley. I build AWS platforms, backend
+          systems, and agentic AI tools.
+        </p>
+        <p>
+          Outside of work, I'm usually climbing, skiing, exploring the mountains,
+          or working on my campervan.
+        </p>
+        <p class="about__links">
+          <a href="mailto:{{ site.profile.email }}">{{ site.profile.email }}</a>
+          {%- if site.profile.resume %}
+          <span aria-hidden="true">&middot;</span>
+          <a href="{{ site.profile.resume | relative_url }}">Résumé (PDF)</a>
+          {%- endif %}
+        </p>
+      </div>
+      <figure class="about__figure">
+        <img
+          src="{{ site.profile.image | relative_url }}"
+          alt="Portrait of Patti Degner"
+          width="640" height="800" loading="lazy" decoding="async">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight" id="earlier">
+  <div class="wrap">
+    <div class="callout">
+      <div class="callout__body">
+        <h2 class="callout__title">Earlier work</h2>
+        <p>
+          Interested in how I got here? Browse selected machine-learning and
+          graduate-school projects from my UC&nbsp;Berkeley program.
+        </p>
+      </div>
+      <a class="btn btn--primary" href="{{ '/project-archive/' | relative_url }}">
+        View project archive <span aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>

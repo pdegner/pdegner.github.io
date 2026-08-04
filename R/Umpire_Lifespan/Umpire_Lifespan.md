@@ -1,3 +1,7 @@
+---
+title: "Umpire Life Expectancy"
+---
+
 # Umpire Lifes Lengths
 
 Data was acquired at this website: https://cran.r-project.org/web/packages/Sleuth2/Sleuth2.pdf

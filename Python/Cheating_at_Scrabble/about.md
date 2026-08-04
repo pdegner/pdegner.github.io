@@ -1,3 +1,7 @@
+---
+title: "Cheating at Scrabble"
+---
+
 # Cheating at Scrabble
 
 This program takes an input of 2-7 letters with up to 2 wildcards, then outputs a list of possible scrabble words and their scores. 

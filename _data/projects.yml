@@ -1,0 +1,181 @@
+# Featured personal projects, rendered as large cards on the homepage.
+# Every claim here is verifiable against the linked repository's README/source.
+featured:
+  - slug: climbing-regulations-rag
+    title: "Climbing Regulations RAG"
+    kicker: "Retrieval-augmented generation"
+    summary: >-
+      A question-answering system over federal climbing regulations from the
+      Forest Service, BLM, National Park Service, and Fish &amp; Wildlife Service.
+      Ask it "how many fixed anchors can I place without a permit?" and it
+      answers with real citations to the actual rule text.
+    body: >-
+      The interesting engineering problem here is not "can a model answer a
+      question" — it is making it structurally impossible for the model to cite
+      a rule that does not exist. Retrieved passages are labeled with
+      placeholder IDs before the model ever sees them, the model is instructed
+      to cite only those placeholders, and a separate post-processing step swaps
+      each placeholder for the real citation. An unmapped placeholder is a hard
+      error, not a guess.
+    visual: climbing-rag
+    highlights:
+      - "Chunks split on real regulatory structure (title / part / section / paragraph) so every chunk maps to one citable rule, never two"
+      - "Hybrid retrieval — dense embeddings plus Postgres keyword search, combined and reranked through Bedrock"
+      - "Placeholder-based citation pipeline: 100% valid citations across 86 generated answers, and it declined all 5 deliberately unanswerable questions"
+      - "43-question eval harness (18 hand-written, 25 generated) comparing four retrieval strategies; each run tagged with the corpus version it saw"
+      - "Deployed as a FastAPI Lambda container with RDS Postgres + pgvector via AWS CDK — no NAT gateway, ~$0.13 for the live demo window"
+    tech:
+      - Python
+      - AWS Bedrock
+      - AWS CDK
+      - Lambda
+      - RDS
+      - Postgres / pgvector
+      - FastAPI
+      - Docker
+    links:
+      - label: "View source"
+        url: "https://github.com/pdegner/climbing-regulations-rag"
+        primary: true
+      - label: "Read the write-up"
+        url: "https://github.com/pdegner/climbing-regulations-rag#readme"
+
+  - slug: notes-mcp
+    title: "notes-mcp"
+    kicker: "Model Context Protocol server"
+    summary: >-
+      A Python MCP server that gives Claude Code and Claude Desktop persistent,
+      local note-taking. Notes are plain Markdown files on your own machine,
+      addressed by a stable numeric id — so a note you reference often always
+      lives at the same address, the way a sticky note stays put on your desk.
+    body: >-
+      It uses all three MCP primitives deliberately, because they do different
+      jobs: tools are verbs the model chooses to call, resources are nouns the
+      client can pull into context by URI, and prompts are templates the user
+      invokes on purpose. The design notes in the README cover the parts that
+      actually matter in an agent tool — bounding context, validating
+      model-supplied input before it touches the filesystem, and keeping stdout
+      clean on the stdio transport.
+    visual: notes-mcp
+    highlights:
+      - "Five tools, three resources (including a <code>note://{id}</code> template), and a summarize prompt"
+      - "List and search return metadata plus a snippet, never full bodies, so a large notes directory can't flood the model's context"
+      - "Note ids arrive from a model, so every id is pattern-validated before it becomes a path; writes are atomic temp-file renames"
+      - "Notes live outside the repo in <code>~/.notes-mcp/</code> with 0700/0600 permissions — git never sees them"
+      - "58 tests plus ruff lint and format checks, run in CI against Python 3.10 and 3.12"
+    tech:
+      - Python
+      - MCP
+      - uv
+      - pytest
+      - ruff
+      - GitHub Actions
+    links:
+      - label: "View source"
+        url: "https://github.com/pdegner/notes-mcp"
+        primary: true
+      - label: "Read the write-up"
+        url: "https://github.com/pdegner/notes-mcp#readme"
+
+# Graduate-school and earlier ML work. Rendered on /project-archive/ only.
+archive:
+  - title: "Mountain Project Sentiment Analysis"
+    summary: >-
+      End-to-end NLP project labeling sentiment in Mountain Project forum posts
+      to find which climbing gear users discuss most positively. Covers scraping,
+      cleaning, model selection, and transfer learning with DistilBERT.
+    url: "/Machine_Learning/mp/mountain_project.html"
+    tech: ["Python", "DistilBERT", "Transfer learning"]
+    note: "Solo project"
+    source: "https://github.com/pdegner/MP_Sentiment_Analysis"
+
+  - title: "Audio Super-Resolution"
+    summary: >-
+      Master's thesis project using GANs and autoencoders to upsample
+      low-quality audio in real time.
+    url: "/Machine_Learning/DeciBull/summary.html"
+    tech: ["Python", "GANs", "Autoencoders"]
+    note: "Team project · Capstone"
+
+  - title: "Car Damage Detection I — Classification"
+    summary: >-
+      Comparison of classical machine-learning approaches against convolutional
+      neural networks for classifying vehicle images as damaged or undamaged.
+    url: "/Machine_Learning/car_damage/sup_summary.html"
+    tech: ["Python", "CNNs", "scikit-learn"]
+    note: "Solo project"
+    source: "https://github.com/pdegner/Car_Damage_Detection"
+
+  - title: "Car Damage Detection II — Localization"
+    summary: >-
+      Computer-vision project using Mask R-CNN to identify and outline the
+      damaged regions of a vehicle rather than only classifying the image.
+    url: "/Machine_Learning/car_damage/unsupervised_learning/writeup/unsup_summary.html"
+    tech: ["Python", "Mask R-CNN", "OpenCV"]
+    note: "Team project"
+    source: "https://github.com/pdegner/Car_Damage_Detection"
+
+  - title: "Digit Classification with KNN and Naive Bayes"
+    summary: >-
+      One of my first machine-learning projects — an exploration of Naive Bayes
+      and k-nearest-neighbours on MNIST.
+    url: "/Machine_Learning/MNIST_ML/MNIST_ML.html"
+    tech: ["Python", "scikit-learn"]
+    note: "Solo project"
+
+  - title: "Measuring the Effect of Difficulty Labels on Problem Solving"
+    summary: >-
+      Designed and ran a randomized experiment testing whether telling people a
+      problem is hard changes how well they solve it, then analyzed the results
+      in R.
+    url: "/R/survey/deng_degner_heck_final.html"
+    tech: ["R", "Experiment design", "Regression"]
+    note: "Team project"
+
+  - title: "Determinants of Crime Rate"
+    summary: >-
+      Regression study of 1987 North Carolina crime data identifying which
+      covariates most affect crime rate, written up as a policy recommendation.
+    url: "/R/Crime_Rate_group_lab/Crime_Rate_group_lab.html"
+    tech: ["R", "Linear regression"]
+    note: "Team project"
+
+  - title: "Umpire Life Expectancy"
+    summary: >-
+      Survival and regression analysis of historical data on 227 major-league
+      umpires, testing the claim that job stress shortened their lifespans.
+    url: "/R/Umpire_Lifespan/Umpire_Lifespan.html"
+    tech: ["R", "Survival analysis"]
+    note: "Solo project"
+
+  - title: "Lasso and Bootstrap Model Selection"
+    summary: >-
+      Worked examples of lasso regularization and bootstrap resampling for
+      model selection, using the mtcars dataset.
+    url: "/R/Lasso_Example/Model_Selection_boot_lasso.html"
+    tech: ["R", "Lasso", "Bootstrap"]
+    note: "Solo project"
+
+  - title: "What Drives the Price of Wine?"
+    summary: >-
+      Analysis of a 130k-row wine review dataset, joined against tasting
+      descriptors scraped from Wikipedia, to find what actually moves price.
+    url: "/Python/Wine_Project/about.html"
+    tech: ["Python", "pandas", "Web scraping"]
+    note: "Team project"
+
+  - title: "ClinVar Data Cleaning"
+    summary: >-
+      Cleaning and reshaping a large genomic variant dataset into an analyzable
+      form — the data-wrangling half of a Python final exam.
+    url: "/Python/ClinVar_Data_Cleaning/about.html"
+    tech: ["Python", "pandas"]
+    note: "Solo project"
+
+  - title: "Cheating at Scrabble"
+    summary: >-
+      Command-line program that takes a Scrabble rack (with wildcards) and
+      prints every valid word it can make, scored and sorted.
+    url: "/Python/Cheating_at_Scrabble/about.html"
+    tech: ["Python"]
+    note: "Solo project"

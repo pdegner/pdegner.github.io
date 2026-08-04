@@ -1,0 +1,38 @@
+{%- assign project = include.project -%}
+<article class="card" id="{{ project.slug }}">
+  <div class="card__visual">
+    {% include visual.html name=project.visual title=project.title %}
+  </div>
+
+  <div class="card__body">
+    <p class="eyebrow">{{ project.kicker }}</p>
+    <h3 class="card__title">{{ project.title }}</h3>
+
+    <p class="card__summary">{{ project.summary }}</p>
+    {%- if project.body %}<p class="card__detail">{{ project.body }}</p>{% endif %}
+
+    {%- if project.highlights %}
+    <ul class="highlights">
+      {%- for point in project.highlights %}
+      <li>{{ point }}</li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+
+    {%- if project.tech %}
+    <ul class="tags tags--card">
+      {%- for item in project.tech %}
+      <li class="tag">{{ item }}</li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+
+    {%- if project.links %}
+    <div class="btn-row btn-row--tight">
+      {%- for link in project.links %}
+      <a class="btn{% if link.primary %} btn--primary{% endif %}" href="{{ link.url }}">{{ link.label }}</a>
+      {%- endfor %}
+    </div>
+    {%- endif %}
+  </div>
+</article>

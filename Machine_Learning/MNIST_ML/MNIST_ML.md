@@ -1,3 +1,7 @@
+---
+title: "Digit Classification with KNN and Naive Bayes"
+---
+
 # Digit Classification with KNN and Naive Bayes
 
 This was one of my first projects in Machine Learning. Here, I explore the Naive Bayes and KNN algorithms. 

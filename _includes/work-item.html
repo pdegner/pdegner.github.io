@@ -1,0 +1,15 @@
+{%- assign item = include.item -%}
+<article class="work">
+  <h3 class="work__title">{{ item.title }}</h3>
+  <div class="work__copy">
+    <p>{{ item.summary }}</p>
+    {%- if item.detail %}<p class="work__detail">{{ item.detail }}</p>{% endif %}
+    {%- if item.tech %}
+    <ul class="tags tags--sm">
+      {%- for t in item.tech %}
+      <li class="tag">{{ t }}</li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+  </div>
+</article>

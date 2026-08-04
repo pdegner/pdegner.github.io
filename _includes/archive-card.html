@@ -1,0 +1,12 @@
+{%- assign project = include.project -%}
+<li class="archive-item">
+  <h2 class="archive-item__title">
+    <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+  </h2>
+  <p class="archive-item__summary">{{ project.summary }}</p>
+  <p class="archive-item__meta">
+    {%- if project.tech %}<span class="archive-item__tech">{{ project.tech | join: " · " }}</span>{% endif %}
+    {%- if project.note %}<span class="archive-item__note">{{ project.note }}</span>{% endif %}
+    {%- if project.source %}<a class="archive-item__source" href="{{ project.source }}">Source</a>{% endif %}
+  </p>
+</li>

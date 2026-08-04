@@ -1,0 +1,66 @@
+{%- comment -%}
+Renders the visual area of a project card. These are hand-built diagrams of
+what the project actually does, not decorative stock imagery. Swap any of them
+for a real screenshot by replacing the branch below with an <img>.
+{%- endcomment -%}
+{%- case include.name -%}
+
+{%- when "climbing-rag" -%}
+<figure class="visual visual--flow">
+  <figcaption class="visual__caption">Query path</figcaption>
+  <ol class="flow">
+    <li class="flow__step">
+      <span class="flow__name">Question</span>
+    </li>
+    <li class="flow__step flow__step--parallel">
+      <span class="flow__name">Dense embed <small>Bedrock Cohere</small></span>
+      <span class="flow__name">Keyword search <small>Postgres</small></span>
+    </li>
+    <li class="flow__step">
+      <span class="flow__name">Combine &amp; rerank <small>top 10 passages</small></span>
+    </li>
+    <li class="flow__step">
+      <span class="flow__name">Build <code>[S#]</code>-labeled context</span>
+    </li>
+    <li class="flow__step">
+      <span class="flow__name">Generate answer <small>Claude via Bedrock</small></span>
+    </li>
+    <li class="flow__step flow__step--end">
+      <span class="flow__name">Swap <code>[S#]</code> &rarr; real citations</span>
+    </li>
+  </ol>
+</figure>
+
+{%- when "notes-mcp" -%}
+<figure class="visual visual--surface">
+  <figcaption class="visual__caption">What it exposes over MCP</figcaption>
+  <dl class="surface">
+    <div class="surface__row">
+      <dt>Tools</dt>
+      <dd>
+        <code>add_note</code><code>list_notes</code><code>search_notes</code><code>get_note</code><code>delete_note</code>
+      </dd>
+    </div>
+    <div class="surface__row">
+      <dt>Resources</dt>
+      <dd>
+        <code>notes://all</code><code>notes://tags</code><code>note://{note_id}</code>
+      </dd>
+    </div>
+    <div class="surface__row">
+      <dt>Prompt</dt>
+      <dd><code>summarize_notes(tag)</code></dd>
+    </div>
+    <div class="surface__row">
+      <dt>Storage</dt>
+      <dd><code>~/.notes-mcp/notes/{id}.md</code></dd>
+    </div>
+  </dl>
+</figure>
+
+{%- else -%}
+<div class="visual visual--placeholder" role="img"
+     aria-label="Screenshot placeholder for {{ include.title }}">
+  <span>Screenshot pending</span>
+</div>
+{%- endcase -%}
