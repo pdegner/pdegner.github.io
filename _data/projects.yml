@@ -134,8 +134,9 @@ archive:
 
   - title: "Determinants of Crime Rate"
     summary: >-
-      Regression study of 1987 North Carolina crime data identifying which
-      covariates most affect crime rate, written up as a policy recommendation.
+      Regression study of a messy county-level crime dataset, asked to produce a
+      policy recommendation. We concluded the best deterrent isn't harsher
+      sentences or more police — it's the perception that you'll be caught.
     url: "/R/Crime_Rate_group_lab/Crime_Rate_group_lab.html"
     tech: ["R", "Linear regression"]
     note: "Team project"

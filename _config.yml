@@ -14,6 +14,11 @@ kramdown:
   hard_wrap: false
   syntax_highlighter: rouge
 
+# This site ships its own _layouts/_includes and CSS. Without an explicit
+# empty theme the github-pages gem silently applies jekyll-theme-primer and
+# publishes a 76 KB stylesheet nothing links to.
+theme:
+
 plugins:
   - jekyll-seo-tag
   - jekyll-redirect-from

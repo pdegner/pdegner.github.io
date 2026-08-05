@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+#
+# Preview the site locally at http://localhost:4000.
+# Rebuilds and reloads the browser as you edit.
+#
+#   bin/serve
+#
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+# Without this, Ruby picks US-ASCII as its default encoding and the Sass
+# converter dies on the first non-ASCII character it meets.
+export LANG="${LANG:-en_US.UTF-8}"
+export LC_ALL="${LC_ALL:-en_US.UTF-8}"
+
+# macOS ships Ruby 2.6, which Jekyll will not run on. Prefer a Homebrew Ruby
+# without making the user change their PATH permanently.
+for dir in /opt/homebrew/opt/ruby/bin /usr/local/opt/ruby/bin; do
+  if [ -x "$dir/ruby" ]; then
+    PATH="$dir:$PATH"
+    break
+  fi
+done
+export PATH
+
+if ! ruby -e 'exit(RUBY_VERSION.split(".").first.to_i >= 3)' 2>/dev/null; then
+  echo "This needs Ruby 3.x; found $(ruby -v 2>/dev/null || echo 'no ruby')." >&2
+  echo "Install it with:  brew install ruby" >&2
+  exit 1
+fi
+
+if [ ! -d vendor/bundle ]; then
+  echo "First run — installing gems into vendor/bundle (a minute or two)…"
+  bundle config set --local path vendor/bundle
+  bundle install
+fi
+
+echo
+echo "  Preview:  http://localhost:4000"
+echo "  Stop:     Ctrl-C"
+echo
+
+exec bundle exec jekyll serve --livereload --open-url "$@"

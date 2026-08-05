@@ -41,14 +41,31 @@ by default; the header toggle writes an explicit choice to `localStorage` and
 overrides `color-scheme` on `:root`. To ship dark as the default instead, set
 `color-scheme: dark light` on `:root`.
 
-## Running it locally
+## Previewing locally
 
 ```sh
-bundle install
-bundle exec jekyll serve
+bin/serve
 ```
 
-Then open <http://localhost:4000>.
+That's it. First run installs gems into `vendor/bundle` (a minute or two);
+after that it starts in seconds, opens <http://localhost:4000>, and reloads the
+browser as you save. Ctrl-C to stop.
+
+**Always check here before pushing.** GitHub Pages publishes new HTML slightly
+before new CSS propagates, so for a minute or so after a push the live site can
+look completely unstyled. That's a deploy artifact, not a broken build — but it
+means the live site is a bad place to review changes.
+
+The script handles two things that otherwise bite on macOS:
+
+- macOS ships Ruby 2.6, which Jekyll won't run on, so it prefers a Homebrew
+  Ruby (`brew install ruby`) without needing a permanent `PATH` change.
+- It forces a UTF-8 locale. Without one Ruby defaults to US-ASCII and the Sass
+  converter dies on the first non-ASCII character it encounters.
+
+The `Gemfile` pins the `github-pages` gem, so local builds run the same Jekyll
+3.10 and the same plugin set as GitHub Pages — including the plugins that gem
+enables implicitly. What you see locally is what deploys.
 
 ## License
 
