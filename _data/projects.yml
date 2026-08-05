@@ -157,22 +157,6 @@ archive:
     tech: ["R", "Lasso", "Bootstrap"]
     note: "Solo project"
 
-  - title: "What Drives the Price of Wine?"
-    summary: >-
-      Analysis of a 130k-row wine review dataset, joined against tasting
-      descriptors scraped from Wikipedia, to find what actually moves price.
-    url: "/Python/Wine_Project/about.html"
-    tech: ["Python", "pandas", "Web scraping"]
-    note: "Team project"
-
-  - title: "ClinVar Data Cleaning"
-    summary: >-
-      Cleaning and reshaping a large genomic variant dataset into an analyzable
-      form — the data-wrangling half of a Python final exam.
-    url: "/Python/ClinVar_Data_Cleaning/about.html"
-    tech: ["Python", "pandas"]
-    note: "Solo project"
-
   - title: "Cheating at Scrabble"
     summary: >-
       Command-line program that takes a Scrabble rack (with wildcards) and
