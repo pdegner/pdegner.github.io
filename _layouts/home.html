@@ -1,23 +1,40 @@
 ---
 layout: base
 ---
-<section class="hero">
-  <div class="wrap">
-    <p class="eyebrow">{{ site.title }}{% if site.profile.location %} &middot; {{ site.profile.location }}{% endif %}</p>
-    <h1 class="hero__title">{{ site.profile.role }}</h1>
-    <div class="hero__copy">
-      <p class="lede">I build production systems on AWS and developer tools powered by AI.</p>
-      <p>
-        My work spans cloud infrastructure, backend engineering, data platforms,
-        and agentic workflows, with an emphasis on systems that are reliable,
-        maintainable, and genuinely useful.
-      </p>
+<section class="hero" id="about">
+  <div class="wrap hero__inner">
+    <div class="hero__text">
+      {%- if site.profile.location %}<p class="eyebrow">{{ site.profile.location }}</p>{% endif %}
+      <h1 class="hero__title">Hi, I&rsquo;m Patti</h1>
+      <div class="hero__copy">
+        <p class="lede">
+          I&rsquo;m a Senior Software Engineer with expertise in AWS, backend
+          systems, data platforms, and agentic AI.
+        </p>
+        <p>
+          My work spans cloud infrastructure, backend engineering, and agentic AI
+          workflows, with an emphasis on systems that are reliable,
+          maintainable, and genuinely useful. I came to engineering through data
+          science, by way of a master&rsquo;s degree from UC&nbsp;Berkeley.
+        </p>
+        <p>
+          If you catch me outside of work, I&rsquo;m usually climbing, skiing, exploring the
+          mountains, or working on my campervan.
+        </p>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="#projects">View featured projects</a>
+        <a class="btn" href="{{ site.profile.github }}">{% include icon.html name="github" %}GitHub</a>
+        <a class="btn" href="{{ site.profile.linkedin }}">{% include icon.html name="linkedin" %}LinkedIn</a>
+      </div>
     </div>
-    <div class="btn-row">
-      <a class="btn btn--primary" href="#projects">View featured projects</a>
-      <a class="btn" href="{{ site.profile.github }}">{% include icon.html name="github" %}GitHub</a>
-      <a class="btn" href="{{ site.profile.linkedin }}">{% include icon.html name="linkedin" %}LinkedIn</a>
-    </div>
+
+    <figure class="hero__figure">
+      <img
+        src="{{ site.profile.image | relative_url }}"
+        alt="Portrait of Patti Degner"
+        width="640" height="800" fetchpriority="high" decoding="async">
+    </figure>
   </div>
 </section>
 
@@ -72,40 +89,7 @@ layout: base
   </div>
 </section>
 
-<section class="section section--alt" id="about">
-  <div class="wrap">
-    {% include section-header.html eyebrow="About" title="Hi, I'm Patti" %}
-
-    <div class="about">
-      <div class="about__copy prose">
-        <p>
-          I'm a software engineer with a background in data science and a
-          master's degree from UC&nbsp;Berkeley. I build AWS platforms, backend
-          systems, and agentic AI tools.
-        </p>
-        <p>
-          Outside of work, I'm usually climbing, skiing, exploring the mountains,
-          or working on my campervan.
-        </p>
-        <p class="about__links">
-          <a href="mailto:{{ site.profile.email }}">{{ site.profile.email }}</a>
-          {%- if site.profile.resume %}
-          <span aria-hidden="true">&middot;</span>
-          <a href="{{ site.profile.resume | relative_url }}">Résumé (PDF)</a>
-          {%- endif %}
-        </p>
-      </div>
-      <figure class="about__figure">
-        <img
-          src="{{ site.profile.image | relative_url }}"
-          alt="Portrait of Patti Degner"
-          width="640" height="800" loading="lazy" decoding="async">
-      </figure>
-    </div>
-  </div>
-</section>
-
-<section class="section section--tight" id="earlier">
+<section class="section section--tight section--alt" id="earlier">
   <div class="wrap">
     <div class="callout">
       <div class="callout__body">

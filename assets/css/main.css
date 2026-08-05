@@ -444,7 +444,29 @@ samp {
    -------------------------------------------------------------------------- */
 
 .hero {
-  padding-block: clamp(3.5rem, 2rem + 7vw, 7.5rem) var(--space-3xl);
+  padding-block: clamp(3rem, 1.8rem + 6vw, 6rem) var(--space-3xl);
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+/* Side-by-side as early as it reads well, so the portrait only stacks on
+   genuinely narrow phones. The column shrinks with the viewport rather than
+   crowding the copy at in-between widths. */
+@media (min-width: 40rem) {
+  .hero__inner {
+    grid-template-columns: minmax(0, 1fr) clamp(9rem, 20vw, 16rem);
+    gap: clamp(var(--space-l), 4vw, var(--space-2xl));
+    align-items: center;
+  }
+}
+
+.hero__text {
+  min-width: 0;
 }
 
 .hero__title {
@@ -463,6 +485,21 @@ samp {
 .hero__copy > p:not(.lede) {
   color: var(--text-muted);
   max-width: 60ch;
+}
+
+.hero__figure {
+  margin: 0;
+  min-width: 0;
+  max-width: 16rem;
+}
+
+.hero__figure img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: var(--border-width) solid var(--border);
 }
 
 /* --------------------------------------------------------------------------
@@ -494,12 +531,12 @@ samp {
 .cards,
 .card,
 .work,
-.about,
+.hero__inner,
 .skills,
 .skills__group,
 .card > *,
 .work > *,
-.about > *,
+.hero__inner > *,
 .skills__group > * {
   min-width: 0;
 }
@@ -847,51 +884,7 @@ samp {
 }
 
 /* --------------------------------------------------------------------------
-   14. About
-   -------------------------------------------------------------------------- */
-
-.about {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: var(--space-l);
-  align-items: start;
-}
-
-@media (min-width: 48rem) {
-  .about {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 15rem);
-    gap: var(--space-2xl);
-  }
-}
-
-.about__copy {
-  max-width: var(--measure);
-}
-
-.about__links {
-  font-size: var(--step--1);
-  color: var(--text-muted);
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2xs);
-}
-
-.about__figure {
-  margin: 0;
-  max-width: 15rem;
-}
-
-.about__figure img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  border-radius: var(--radius);
-  border: var(--border-width) solid var(--border);
-}
-
-/* --------------------------------------------------------------------------
-   15. Earlier-work callout
+   14. Earlier-work callout
    -------------------------------------------------------------------------- */
 
 .callout {
@@ -926,7 +919,7 @@ samp {
 }
 
 /* --------------------------------------------------------------------------
-   16. Interior pages
+   15. Interior pages
    -------------------------------------------------------------------------- */
 
 .page {
@@ -1014,7 +1007,7 @@ samp {
 }
 
 /* --------------------------------------------------------------------------
-   17. Prose (markdown content)
+   16. Prose (markdown content)
    -------------------------------------------------------------------------- */
 
 .prose {
@@ -1141,7 +1134,7 @@ samp {
 }
 
 /* --------------------------------------------------------------------------
-   18. Syntax highlighting (Rouge)
+   17. Syntax highlighting (Rouge)
    -------------------------------------------------------------------------- */
 
 .highlight .c,
@@ -1195,7 +1188,7 @@ samp {
 }
 
 /* --------------------------------------------------------------------------
-   19. Print
+   18. Print
    -------------------------------------------------------------------------- */
 
 @media print {

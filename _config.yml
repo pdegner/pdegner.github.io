@@ -38,7 +38,7 @@ social:
 # Rendered in the header, hero and footer.
 profile:
   role: "Senior Software Engineer"
-  location: "Denver, Colorado"
+  location: "Dillon, Colorado"
   email: "pattidegner@gmail.com"
   github: "https://github.com/pdegner"
   github_handle: "pdegner"
@@ -51,8 +51,8 @@ nav:
     url: "/#projects"
   - title: "Experience"
     url: "/#experience"
-  - title: "About"
-    url: "/#about"
+  - title: "Skills"
+    url: "/#skills"
   - title: "Archive"
     url: "/project-archive/"
 
